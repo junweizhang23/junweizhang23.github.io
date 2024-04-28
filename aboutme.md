@@ -1,16 +1,19 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: About Me
+subtitle: Why you'd want to know more about me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Junwei Zhang. I possess the following qualities:
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+- I am a software engineer with experience at Uber, Microsoft Azure, and DoorDash.
+- I hold a Ph.D. in Applied Mathematics and Statistics from Stony Brook University, and previously, I earned a master's degree from the University of Florida. In China, I obtained two bachelor's degrees, one in Mathematics and another in Computer Science.
+- I am an associate editor of the top AI journal IEEE Transactions on Circuits and Systems for Video Technology (TCSVT).
+- I also work with a Venture Capital firm, investing in startups like Flourish Science—a team of Stanford scientists leading an AI-supported mental health startup to mitigate loneliness.
+- I am extremely loyal to my family.
 
-What else do you need?
+What else would you like to know?
 
-### My story
+### My Story
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+To be honest, I'm having some trouble recalling all the details right now, so why don't you take a look at [my favorite movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29)? It will answer **all** your questions.
