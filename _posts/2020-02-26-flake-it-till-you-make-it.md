@@ -11,7 +11,7 @@ author: Junwei Zhang
 
 ## About Me
 
-Hello, I'm **Junwei Zhang**, a passionate technologist with a diverse background in academia and industry. I hold a Ph.D. in Applied Mathematics and Statistics from Stony Brook University, focusing on discrete conformal geometry, geometry processing, parallel computing, and computer vision. During my academic tenure, I had the privilege of collaborating with esteemed professors such as [David Gu](https://www3.cs.stonybrook.edu/~gu/), [Jie Gao](https://sites.rutgers.edu/jie-gao/about/), and [Thomas G. Robertazzi](https://www.ece.stonybrook.edu/~tom/).
+Hello, I'm **[Junwei Zhang](https://scholar.google.com/citations?user=FkAGB3MAAAAJ&hl=en)**, a passionate technologist with a diverse background in academia and industry. I hold a Ph.D. in Applied Mathematics and Statistics from Stony Brook University, focusing on discrete conformal geometry, geometry processing, parallel computing, and computer vision. During my academic tenure, I had the privilege of collaborating with esteemed professors such as [David Gu](https://www3.cs.stonybrook.edu/~gu/), [Jie Gao](https://sites.rutgers.edu/jie-gao/about/), and [Thomas G. Robertazzi](https://www.ece.stonybrook.edu/~tom/).
 
 Prior to Stony Brook, I contributed to research at the University of Florida alongside [Professor Xiaolin Li](https://cognization.com/andyli/). 
 
@@ -31,6 +31,6 @@ In the venture capital space, I work as an investment director and scout manager
 
 ## Academic Contributions
 
-In the academic sphere, I am an associate editor for the T-CSVT journal, overseeing developments in computer vision and multimedia, coordinating faculty and top researchers to review significant papers and advancements in the field.
+In the academic sphere, I am an associate editor for the [T-CSVT](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76) journal, overseeing developments in computer vision and multimedia, coordinating faculty and top researchers to review significant papers and advancements in the field.
 
 Thank you for visiting my page and exploring my journey from geometry to the dynamic world of Silicon Valley technology and investment.
