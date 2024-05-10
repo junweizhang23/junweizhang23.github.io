@@ -1,18 +1,36 @@
 ---
 layout: post
-title: Fake it till you make it
-subtitle: Excerpt from Soulshaping by Jeff Brown
+title: Meet Junwei Zhang
+subtitle: From Discrete Geometry to Silicon Valley
 cover-img: /assets/img/path.jpg
 thumbnail-img: /assets/img/thumb.png
 share-img: /assets/img/path.jpg
-tags: [books, test]
-author: Sharon Smith and Barry Simpson
+tags: [technology, career, AI, engineering]
+author: Junwei Zhang
 ---
 
-Under what circumstances should we step off a path? When is it essential that we finish what we start? If I bought a bag of peanuts and had an allergic reaction, no one would fault me if I threw it out. If I ended a relationship with a woman who hit me, no one would say that I had a commitment problem. But if I walk away from a seemingly secure route because my soul has other ideas, I am a flake?
+## About Me
 
-The truth is that no one else can definitively know the path we are here to walk. It’s tempting to listen—many of us long for the omnipotent other—but unless they are genuine psychic intuitives, they can’t know. All others can know is their own truth, and if they’ve actually done the work to excavate it, they will have the good sense to know that they cannot genuinely know anyone else’s. Only soul knows the path it is here to walk. Since you are the only one living in your temple, only you can know its scriptures and interpretive structure.
+Hello, I'm **Junwei Zhang**, a passionate technologist with a diverse background in academia and industry. I hold a Ph.D. in Applied Mathematics and Statistics from Stony Brook University, focusing on discrete conformal geometry, geometry processing, parallel computing, and computer vision. During my academic tenure, I had the privilege of collaborating with esteemed professors such as [David Gu](https://www3.cs.stonybrook.edu/~gu/), [Jie Gao](https://sites.rutgers.edu/jie-gao/about/), and [Thomas G. Robertazzi](https://www.ece.stonybrook.edu/~tom/).
 
-At the heart of the struggle are two very different ideas of success—survival-driven and soul-driven. For survivalists, success is security, pragmatism, power over others. Success is the absence of material suffering, the nourishing of the soul be damned. It is an odd and ironic thing that most of the material power in our world often resides in the hands of younger souls. Still working in the egoic and material realms, they love the sensations of power and focus most of their energy on accumulation. Older souls tend not to be as materially driven. They have already played the worldly game in previous lives and they search for more subtle shades of meaning in this one—authentication rather than accumulation. They are often ignored by the culture at large, although they really are the truest warriors.
+Prior to Stony Brook, I contributed to research at the University of Florida alongside [Professor Xiaolin Li](https://cognization.com/andyli/). 
 
-A soulful notion of success rests on the actualization of our innate image. Success is simply the completion of a soul step, however unsightly it may be. We have finished what we started when the lesson is learned. What a fear-based culture calls a wonderful opportunity may be fruitless and misguided for the soul. Staying in a passionless relationship may satisfy our need for comfort, but it may stifle the soul. Becoming a famous lawyer is only worthwhile if the soul demands it. It is an essential failure if you are called to be a monastic this time around. If you need to explore and abandon ten careers in order to stretch your soul toward its innate image, then so be it. Flake it till you make it.
+## Professional Journey
+
+My industry journey began with an internship as a Data Scientist at Uber in Autumn 2017, transitioning to a full-time Software Engineer at Uber's Seattle office. I have extensive experience with backend development and distributed systems.
+
+Before Uber, I was a Machine Learning Scientist at Brookhaven National Laboratory and eBay's San Jose office. Following my tenure at Uber, I joined Azure Cloud + AI organization, leading projects on blob storage across different geolocations and optimizing storage solutions with HDDs and SSDs based on usage frequency.
+
+Most recently, I served as a Senior Software Engineer in the Growth Team at DoorDash, focusing on Ads martech development.
+
+## Leadership and Community Engagement
+
+I also serve as a board member of the [Top Geek Organization (TGO)](https://tgo.infoq.cn/), a nonprofit where members include CTOs and VPs from leading Asian tech companies. Additionally, I organize monthly webinars to discuss the latest AI advancements in Silicon Valley.
+
+In the venture capital space, I work as an investment director and scout manager in Silicon Valley and the Boston area, engaging as a VC and angel investor.
+
+## Academic Contributions
+
+In the academic sphere, I am an associate editor for the T-CSVT journal, overseeing developments in computer vision and multimedia, coordinating faculty and top researchers to review significant papers and advancements in the field.
+
+Thank you for visiting my page and exploring my journey from geometry to the dynamic world of Silicon Valley technology and investment.
