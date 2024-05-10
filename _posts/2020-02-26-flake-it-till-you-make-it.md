@@ -31,6 +31,6 @@ In the venture capital space, I work as an investment director and scout manager
 
 ## Academic Contributions
 
-In the academic sphere, I am an associate editor for the [T-CSVT](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76) journal, overseeing developments in computer vision and multimedia, coordinating faculty and top researchers to review significant papers and advancements in the field.
+In the academic sphere, I am an associate editor for the [T-CSVT IEEE Transactions on Circuits and Systems for Video Technology](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76) journal, overseeing developments in computer vision and multimedia, coordinating faculty and top researchers to review significant papers and advancements in the field.
 
 Thank you for visiting my page and exploring my journey from geometry to the dynamic world of Silicon Valley technology and investment.
