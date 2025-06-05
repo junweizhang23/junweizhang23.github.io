@@ -27,6 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Academic Icons for Google Scholar */}
+        <link 
+          rel="stylesheet" 
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+        />
+        
         {/* Giscus Comments */}
         <script 
           src="https://giscus.app/client.js"

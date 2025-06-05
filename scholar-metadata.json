@@ -1,0 +1,34 @@
+{
+  "profileId": "FkAGB3MAAAAJ",
+  "profileUrl": "https://scholar.google.com/citations?user=FkAGB3MAAAAJ&hl=en",
+  "citations": 155,
+  "hIndex": 6,
+  "i10Index": 3,
+  "publications": 10,
+  "researchSince": 2015,
+  "lastUpdated": "2024-06-04T21:00:00.000Z",
+  "lastChecked": "2024-06-04T21:00:00.000Z",
+  "updateFrequency": "daily",
+  "collaborators": [
+    "David Xianfeng Gu",
+    "Thomas Robertazzi", 
+    "Li Shi",
+    "Yalin Wang",
+    "Kewei Chen",
+    "Wen (Vincent) Zhang",
+    "Mayank Goswami",
+    "Jie Gao",
+    "Emil Saucan",
+    "Siming Li"
+  ],
+  "researchAreas": [
+    "Differential Geometry",
+    "Parallel Computing", 
+    "Computer Vision",
+    "Heterogeneous Computing"
+  ],
+  "affiliations": [
+    "Doordash",
+    "Stony Brook University"
+  ]
+} 

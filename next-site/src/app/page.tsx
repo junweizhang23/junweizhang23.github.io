@@ -38,16 +38,17 @@ export default function Home() {
               <div className="grid md:grid-cols-3 gap-8 items-center">
                 <div className="md:col-span-2">
                   <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-                    Academic Researcher & Engineer
+                    Dr. Junwei Zhang
                   </h2>
                   <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                    Welcome to my academic profile. I am passionate about advancing knowledge in 
-                    computer science and engineering through rigorous research and innovative solutions.
+                    Welcome to my academic profile. I am a researcher specializing in computational geometry, 
+                    parallel computing, and computer vision. Currently affiliated with DoorDash and Stony Brook University,
+                    I focus on developing innovative algorithms for real-world applications.
                   </p>
                   <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-                    This website showcases my research contributions, publications, and professional 
-                    journey in academia. Please explore my work and feel free to reach out for 
-                    collaboration opportunities.
+                    My research spans differential geometry, optimal mass transportation, data center optimization, 
+                    and neuroimaging analysis. With publications in top-tier conferences and journals, 
+                    I am passionate about bridging theoretical foundations with practical implementations.
                   </p>
                   <div className="flex gap-4">
                     <a 
@@ -84,32 +85,62 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
                   <div className="flex items-center mb-3">
-                    <span className="text-2xl mr-3">🧠</span>
+                    <span className="text-2xl mr-3">📐</span>
                     <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
-                      Machine Learning & AI
+                      Differential Geometry
                     </h4>
                   </div>
                   <p className="text-slate-600 dark:text-slate-300">
-                    Developing novel algorithms for pattern recognition, natural language processing, and computer vision applications.
+                    Research in computational geometry, mesh parameterization for poly-annulus surfaces, and optimal mass transportation techniques.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Deep Learning</span>
-                    <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">NLP</span>
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Mesh Parameterization</span>
+                    <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">Optimal Transport</span>
                   </div>
                 </div>
                 <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
                   <div className="flex items-center mb-3">
-                    <span className="text-2xl mr-3">📊</span>
+                    <span className="text-2xl mr-3">⚡</span>
                     <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
-                      Data Science & Analytics
+                      Parallel Computing
                     </h4>
                   </div>
                   <p className="text-slate-600 dark:text-slate-300">
-                    Extracting insights from complex datasets using statistical methods and visualization techniques.
+                    High-performance computing solutions for data centers, network optimization, and parallel processing architectures.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Statistics</span>
-                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">Visualization</span>
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Data Centers</span>
+                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">Network Optimization</span>
+                  </div>
+                </div>
+                <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-center mb-3">
+                    <span className="text-2xl mr-3">👁️</span>
+                    <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
+                      Computer Vision
+                    </h4>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    Neuroimaging analysis, biomarker development, and volumetric optimal transportation for medical imaging applications.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">Neuroimaging</span>
+                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Biomarkers</span>
+                  </div>
+                </div>
+                <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-center mb-3">
+                    <span className="text-2xl mr-3">🖥️</span>
+                    <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
+                      Heterogeneous Computing
+                    </h4>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    Matrix multiplication optimization on heterogeneous processor platforms and data-intensive network processing.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">Matrix Operations</span>
+                    <span className="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-2 py-1 rounded text-xs">Data Networks</span>
                   </div>
                 </div>
               </div>
@@ -123,13 +154,13 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
                   <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
-                    Advanced Machine Learning Techniques for Pattern Recognition
+                    Area-preserving mesh parameterization for poly-annulus surfaces based on optimal mass transportation
                   </h4>
                   <p className="text-blue-600 dark:text-blue-400 mb-2">
-                    IEEE Transactions on Pattern Analysis, 2024
+                    Computer Aided Geometric Design, 2016 · Cited by 62
                   </p>
                   <p className="text-slate-600 dark:text-slate-300 mb-4">
-                    This paper presents novel approaches to pattern recognition using deep learning architectures and demonstrates significant improvements in accuracy.
+                    K Su, L Cui, K Qian, N Lei, J Zhang, M Zhang, XD Gu - A novel approach to mesh parameterization using optimal mass transportation theory.
                   </p>
                   <div className="flex gap-4">
                     <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">PDF</a>
@@ -139,13 +170,29 @@ export default function Home() {
                 </div>
                 <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
                   <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
-                    Scalable Data Processing in Distributed Systems
+                    Volume preserving mesh parameterization based on optimal mass transportation
                   </h4>
                   <p className="text-blue-600 dark:text-blue-400 mb-2">
-                    ACM Computing Surveys, 2024
+                    Computer-Aided Design, 2017 · Cited by 46
                   </p>
                   <p className="text-slate-600 dark:text-slate-300 mb-4">
-                    A comprehensive survey of modern distributed computing techniques for large-scale data processing and analysis.
+                    K Su, W Chen, N Lei, J Zhang, K Qian, X Gu - Advanced techniques for volume-preserving mesh parameterization using transportation theory.
+                  </p>
+                  <div className="flex gap-4">
+                    <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">PDF</a>
+                    <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">BibTeX</a>
+                    <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">DOI</a>
+                  </div>
+                </div>
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+                  <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+                    Coflow Scheduling in Data Centers: Routing and Bandwidth Allocation
+                  </h4>
+                  <p className="text-blue-600 dark:text-blue-400 mb-2">
+                    IEEE Transactions on Parallel and Distributed Systems, 2021 · Cited by 22
+                  </p>
+                  <p className="text-slate-600 dark:text-slate-300 mb-4">
+                    TG Shi, Li and Liu, Yang and Zhang, Junwei and Robertazzi - Optimization techniques for data center network performance and resource allocation.
                   </p>
                   <div className="flex gap-4">
                     <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">PDF</a>
@@ -156,10 +203,13 @@ export default function Home() {
               </div>
               <div className="text-center mt-8">
                 <a 
-                  href="/publications" 
-                  className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                  href="https://scholar.google.com/citations?user=FkAGB3MAAAAJ&hl=en" 
+                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  View All Publications →
+                  <i className="ai ai-google-scholar text-lg"></i>
+                  View All Publications on Google Scholar →
                 </a>
               </div>
             </section>
@@ -176,26 +226,36 @@ export default function Home() {
                 </p>
                 <div className="flex justify-center gap-6">
                   <a 
-                    href="mailto:your.email@university.edu" 
+                    href="mailto:junwei.zhang@stonybrook.edu" 
                     className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
                   >
                     Email
                   </a>
                   <a 
-                    href="https://scholar.google.com" 
-                    className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                    href="https://scholar.google.com/citations?user=FkAGB3MAAAAJ&hl=en" 
+                    className="flex items-center gap-1 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
+                    <i className="ai ai-google-scholar"></i>
                     Google Scholar
                   </a>
                   <a 
-                    href="https://linkedin.com" 
+                    href="https://www.linkedin.com/in/junwei-zhang" 
                     className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     LinkedIn
+                  </a>
+                  <a 
+                    href="https://orcid.org/0000-0000-0000-0000" 
+                    className="flex items-center gap-1 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="ai ai-orcid"></i>
+                    ORCID
                   </a>
                 </div>
               </div>
@@ -241,26 +301,42 @@ export default function Home() {
 
             {/* Quick Stats */}
             <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
-              <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
+              <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                <i className="ai ai-google-scholar text-blue-600 dark:text-blue-400"></i>
                 📈 Academic Metrics
               </h4>
               <div className="space-y-3">
-                <div className="flex justify-between">
+                <div className="flex justify-between items-center">
                   <span className="text-slate-600 dark:text-slate-300">Publications</span>
-                  <span className="font-semibold text-slate-900 dark:text-white">25+</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">10+</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between items-center">
                   <span className="text-slate-600 dark:text-slate-300">Citations</span>
-                  <span className="font-semibold text-slate-900 dark:text-white">500+</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">155</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between items-center">
                   <span className="text-slate-600 dark:text-slate-300">h-index</span>
-                  <span className="font-semibold text-slate-900 dark:text-white">15</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">6</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-600 dark:text-slate-300">Collaborations</span>
-                  <span className="font-semibold text-slate-900 dark:text-white">12</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-600 dark:text-slate-300">i10-index</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">3</span>
                 </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-600 dark:text-slate-300">Research Since</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">2015</span>
+                </div>
+              </div>
+              <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-600">
+                <a 
+                  href="https://scholar.google.com/citations?user=FkAGB3MAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 px-4 py-2 rounded-lg transition-colors text-sm font-medium"
+                >
+                  <i className="ai ai-google-scholar"></i>
+                  View Google Scholar Profile
+                </a>
               </div>
             </div>
 
@@ -273,22 +349,29 @@ export default function Home() {
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="text-slate-900 dark:text-white">Paper accepted at ICML 2024</div>
-                    <div className="text-slate-500 dark:text-slate-400">2 days ago</div>
+                    <div className="text-slate-900 dark:text-white">Research collaboration with SUNY Stony Brook</div>
+                    <div className="text-slate-500 dark:text-slate-400">3 weeks ago</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="text-slate-900 dark:text-white">Keynote at AI Conference</div>
-                    <div className="text-slate-500 dark:text-slate-400">1 week ago</div>
+                    <div className="text-slate-900 dark:text-white">Paper on data center optimization submitted</div>
+                    <div className="text-slate-500 dark:text-slate-400">1 month ago</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="text-slate-900 dark:text-white">New collaboration started</div>
-                    <div className="text-slate-500 dark:text-slate-400">2 weeks ago</div>
+                    <div className="text-slate-900 dark:text-white">Computational geometry research update</div>
+                    <div className="text-slate-500 dark:text-slate-400">2 months ago</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="text-slate-900 dark:text-white">Conference presentation at SIAM</div>
+                    <div className="text-slate-500 dark:text-slate-400">3 months ago</div>
                   </div>
                 </div>
               </div>
