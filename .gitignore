@@ -61,3 +61,14 @@ _site/
 Gemfile.lock
 beautiful-jekyll-theme-*.gem
 
+# GitHub configuration
+.github/
+└── workflows/
+    └── deploy.yml          # ✅ Simple static deployment
+    # ❌ ci.yml              # Removed Jekyll build
+    # ❌ issue_template.md   # Removed theme templates  
+    # ❌ FUNDING.yml         # Removed theme funding
+
+# Added .nojekyll file
+.nojekyll
+
