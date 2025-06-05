@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Important pages for search engines
+Sitemap: https://junweizhang23.github.io/sitemap.xml
+
+# Allow indexing of all content
+Allow: /about
+Allow: /research
+Allow: /publications
+Allow: /contact
+
+# Faster crawling for search engines
+Crawl-delay: 1 
