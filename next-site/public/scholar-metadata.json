@@ -1,11 +1,15 @@
 {
   "profileId": "FkAGB3MAAAAJ",
   "profileUrl": "https://scholar.google.com/citations?user=FkAGB3MAAAAJ&hl=en",
+  "linkedinUrl": "https://www.linkedin.com/in/junweizhangcs/",
   "citations": 155,
   "hIndex": 6,
   "i10Index": 3,
   "publications": 10,
   "researchSince": 2015,
+  "currentRole": "Senior Software Engineer",
+  "currentCompany": "DoorDash",
+  "currentResearch": "Smart Glass Multi-Modal Systems",
   "lastUpdated": "2024-06-04T21:00:00.000Z",
   "lastChecked": "2024-06-04T21:00:00.000Z",
   "updateFrequency": "daily",
@@ -22,13 +26,20 @@
     "Siming Li"
   ],
   "researchAreas": [
-    "Differential Geometry",
+    "Smart Glass Multi-Modal Systems",
+    "Computational Geometry",
     "Parallel Computing", 
-    "Computer Vision",
-    "Heterogeneous Computing"
+    "3D Computer Vision",
+    "AR/VR Technology"
   ],
   "affiliations": [
-    "Doordash",
-    "Stony Brook University"
+    "DoorDash (Senior Software Engineer)",
+    "Stony Brook University (Ph.D.)"
+  ],
+  "currentFocus": [
+    "Smart Glass Technology Development",
+    "Multi-Modal AI Systems",
+    "Immersive User Interfaces",
+    "Computer Vision for AR/VR"
   ]
 } 

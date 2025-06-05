@@ -41,14 +41,16 @@ export default function Home() {
                     Dr. Junwei Zhang
                   </h2>
                   <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                    Welcome to my academic profile. I am a researcher specializing in computational geometry, 
-                    parallel computing, and computer vision. Currently affiliated with DoorDash and Stony Brook University,
-                    I focus on developing innovative algorithms for real-world applications.
+                    Senior Software Engineer at DoorDash and pioneering researcher in cutting-edge technology. 
+                    I&apos;m currently developing next-generation <strong>smart glass multi-modal systems</strong> that 
+                    integrate computer vision, parallel computing, and advanced user interfaces for immersive experiences.
                   </p>
                   <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-                    My research spans differential geometry, optimal mass transportation, data center optimization, 
-                    and neuroimaging analysis. With publications in top-tier conferences and journals, 
-                    I am passionate about bridging theoretical foundations with practical implementations.
+                    With a Ph.D. from Stony Brook University and expertise spanning computational geometry, 
+                    optimal mass transportation, and data center optimization, I bridge theoretical foundations 
+                    with practical innovations. My research portfolio includes pioneering work in 3D computer vision, 
+                    neuroimaging analysis, and network optimization—now applied to revolutionary smart glass technology 
+                    that redefines human-computer interaction.
                   </p>
                   <div className="flex gap-4">
                     <a 
@@ -83,11 +85,28 @@ export default function Home() {
                 Research Areas
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
+                <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 ring-2 ring-blue-500/20">
+                  <div className="flex items-center mb-3">
+                    <span className="text-2xl mr-3">🥽</span>
+                    <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
+                      Smart Glass Multi-Modal Systems
+                    </h4>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    <strong>Current Research:</strong> Developing cutting-edge smart glass technology integrating computer vision, 
+                    gesture recognition, and immersive interfaces for next-generation human-computer interaction.
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">AR/VR</span>
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Multi-Modal AI</span>
+                    <span className="bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 px-2 py-1 rounded text-xs">Industry R&D</span>
+                  </div>
+                </div>
                 <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
                   <div className="flex items-center mb-3">
                     <span className="text-2xl mr-3">📐</span>
                     <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
-                      Differential Geometry
+                      Computational Geometry
                     </h4>
                   </div>
                   <p className="text-slate-600 dark:text-slate-300">
@@ -106,7 +125,7 @@ export default function Home() {
                     </h4>
                   </div>
                   <p className="text-slate-600 dark:text-slate-300">
-                    High-performance computing solutions for data centers, network optimization, and parallel processing architectures.
+                    High-performance computing solutions for data centers, network optimization, and parallel processing architectures at scale.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Data Centers</span>
@@ -117,30 +136,15 @@ export default function Home() {
                   <div className="flex items-center mb-3">
                     <span className="text-2xl mr-3">👁️</span>
                     <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
-                      Computer Vision
+                      3D Computer Vision
                     </h4>
                   </div>
                   <p className="text-slate-600 dark:text-slate-300">
-                    Neuroimaging analysis, biomarker development, and volumetric optimal transportation for medical imaging applications.
+                    Advanced computer vision for neuroimaging analysis, biomarker development, and spatial understanding in smart glass applications.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">Neuroimaging</span>
-                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Biomarkers</span>
-                  </div>
-                </div>
-                <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
-                  <div className="flex items-center mb-3">
-                    <span className="text-2xl mr-3">🖥️</span>
-                    <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
-                      Heterogeneous Computing
-                    </h4>
-                  </div>
-                  <p className="text-slate-600 dark:text-slate-300">
-                    Matrix multiplication optimization on heterogeneous processor platforms and data-intensive network processing.
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    <span className="bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded text-xs">Matrix Operations</span>
-                    <span className="bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 px-2 py-1 rounded text-xs">Data Networks</span>
+                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Spatial Computing</span>
                   </div>
                 </div>
               </div>
@@ -241,7 +245,7 @@ export default function Home() {
                     Google Scholar
                   </a>
                   <a 
-                    href="https://www.linkedin.com/in/junwei-zhang" 
+                    href="https://www.linkedin.com/in/junweizhangcs/" 
                     className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -303,7 +307,7 @@ export default function Home() {
             <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
               <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                 <i className="ai ai-google-scholar text-blue-600 dark:text-blue-400"></i>
-                📈 Academic Metrics
+                📊 Academic & Industry Impact
               </h4>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
@@ -319,12 +323,12 @@ export default function Home() {
                   <span className="font-semibold text-slate-900 dark:text-white">6</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-600 dark:text-slate-300">i10-index</span>
-                  <span className="font-semibold text-slate-900 dark:text-white">3</span>
+                  <span className="text-slate-600 dark:text-slate-300">Industry Experience</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">Senior SWE</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-600 dark:text-slate-300">Research Since</span>
-                  <span className="font-semibold text-slate-900 dark:text-white">2015</span>
+                  <span className="text-slate-600 dark:text-slate-300">Current Focus</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">Smart Glass</span>
                 </div>
               </div>
               <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-600">
@@ -349,29 +353,29 @@ export default function Home() {
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="text-slate-900 dark:text-white">Research collaboration with SUNY Stony Brook</div>
-                    <div className="text-slate-500 dark:text-slate-400">3 weeks ago</div>
+                    <div className="text-slate-900 dark:text-white">Smart glass multi-modal system prototype milestone</div>
+                    <div className="text-slate-500 dark:text-slate-400">1 week ago</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="text-slate-900 dark:text-white">Paper on data center optimization submitted</div>
-                    <div className="text-slate-500 dark:text-slate-400">1 month ago</div>
+                    <div className="text-slate-900 dark:text-white">Advanced AR interface development at DoorDash</div>
+                    <div className="text-slate-500 dark:text-slate-400">2 weeks ago</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="text-slate-900 dark:text-white">Computational geometry research update</div>
-                    <div className="text-slate-500 dark:text-slate-400">2 months ago</div>
+                    <div className="text-slate-900 dark:text-white">Multi-modal AI research collaboration</div>
+                    <div className="text-slate-500 dark:text-slate-400">1 month ago</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="text-slate-900 dark:text-white">Conference presentation at SIAM</div>
-                    <div className="text-slate-500 dark:text-slate-400">3 months ago</div>
+                    <div className="text-slate-900 dark:text-white">Computer vision optimization for real-time applications</div>
+                    <div className="text-slate-500 dark:text-slate-400">6 weeks ago</div>
                   </div>
                 </div>
               </div>
