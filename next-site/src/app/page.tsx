@@ -17,6 +17,9 @@ export default function Home() {
               <a href="#leadership" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
                 Leadership
               </a>
+              <a href="#experience" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
+                Experience
+              </a>
               <a href="#research" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
                 Research
               </a>
@@ -53,22 +56,23 @@ export default function Home() {
                       🚀 TGO Elite Tech Leader
                     </span>
                     <span className="bg-gradient-to-r from-red-600 to-red-700 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
-                      🎓 Stanford AI Program
+                      🎓 Stanford CS Master
                     </span>
                   </div>
                   
                   <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                    Senior Software Engineer at DoorDash and pioneering researcher in cutting-edge technology. 
-                    As an <strong>Associate Editor for IEEE T-CSVT</strong> (Impact Factor: 8.4) and member of the elite 
-                    <strong>TGO (鲲鹏会)</strong> tech leadership community, I&apos;m currently developing next-generation 
-                    <strong>smart glass multi-modal systems</strong> that integrate computer vision, parallel computing, 
-                    and advanced user interfaces for immersive experiences.
+                    Currently working at <strong>Meta</strong> on cutting-edge <strong>smart glass GenAI multi-modal systems</strong> 
+                    and infrastructure. As an <strong>Associate Editor for IEEE T-CSVT</strong> (Impact Factor: 8.4) and member 
+                    of the elite <strong>TGO (鲲鹏会)</strong> tech leadership community, I&apos;m pioneering the next generation 
+                    of human-computer interaction through advanced AI-powered smart glass technology.
                   </p>
                   <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-                    With a Ph.D. from Stony Brook University and active enrollment in the <strong>Stanford AI Computer Science Program</strong>, 
-                    I bridge theoretical foundations with practical innovations. My research portfolio includes pioneering work in 
-                    3D computer vision, neuroimaging analysis, and network optimization—now applied to revolutionary smart glass 
-                    technology that redefines human-computer interaction. I share insights through my 
+                    With a Ph.D. from Stony Brook University and active enrollment in 
+                    <a href="https://cs.stanford.edu/degrees/mscs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Stanford&apos;s CS Master Program</a>, 
+                    I bring extensive industry experience from <strong>Meta</strong>, <strong>DoorDash</strong> (Tech Lead), 
+                    <strong>Microsoft Azure</strong>, and <strong>Uber</strong> (Palo Alto & Seattle). My work spans 3D computer vision, 
+                    neuroimaging analysis, and network optimization—now applied to revolutionary GenAI multi-modal glass models 
+                    that redefine immersive experiences. I share insights through my 
                     <a href="https://www.youtube.com/@junweizhang" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">YouTube channel</a> 
                     and <a href="https://www.bilibili.com/video/BV1QfoGYgERZ/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Bilibili</a>.
                   </p>
@@ -99,6 +103,92 @@ export default function Home() {
               </div>
             </section>
 
+            {/* Professional Experience */}
+            <section id="experience" className="mb-16">
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+                Professional Experience
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-lg border border-blue-200 dark:border-blue-700">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                      <span className="text-white font-bold text-lg">M</span>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-slate-900 dark:text-white">Meta</h4>
+                      <p className="text-blue-600 dark:text-blue-400 font-medium">Current Position</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300 mb-3">
+                    <strong>Smart Glass GenAI Multi-Modal Systems</strong><br/>
+                    Working on cutting-edge smart glass technology and infrastructure, developing GenAI multi-modal glass models for next-generation AR experiences.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Smart Glass</span>
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">GenAI</span>
+                    <span className="bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 px-2 py-1 rounded text-xs">Multi-Modal AI</span>
+                  </div>
+                </div>
+
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-lg border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mr-4">
+                      <span className="text-white font-bold text-lg">D</span>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-slate-900 dark:text-white">DoorDash</h4>
+                      <p className="text-orange-600 dark:text-orange-400 font-medium">Tech Lead</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300 mb-3">
+                    Led technology initiatives and engineering teams, driving innovation in large-scale distributed systems and smart technology applications.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">Tech Leadership</span>
+                    <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">Distributed Systems</span>
+                  </div>
+                </div>
+
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-lg border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                      <span className="text-white font-bold text-lg">M</span>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-slate-900 dark:text-white">Microsoft Azure</h4>
+                      <p className="text-blue-600 dark:text-blue-400 font-medium">Software Engineer</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300 mb-3">
+                    Contributed to cloud computing infrastructure and Azure services, working on large-scale distributed systems and cloud technologies.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Cloud Computing</span>
+                    <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Azure</span>
+                  </div>
+                </div>
+
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-lg border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-black dark:bg-slate-600 rounded-lg flex items-center justify-center mr-4">
+                      <span className="text-white font-bold text-lg">U</span>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-semibold text-slate-900 dark:text-white">Uber</h4>
+                      <p className="text-slate-600 dark:text-slate-400 font-medium">Software Engineer • Palo Alto & Seattle</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300 mb-3">
+                    Worked across multiple offices developing high-performance systems for ride-sharing and logistics platforms at global scale.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 px-2 py-1 rounded text-xs">High Performance</span>
+                    <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Logistics</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* Research Areas */}
             <section id="research" className="mb-16">
               <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
@@ -116,9 +206,9 @@ export default function Home() {
                     </span>
                   </div>
                   <p className="text-slate-600 dark:text-slate-300">
-                    <strong>Current Research:</strong> Pioneering smart glass technology that seamlessly integrates computer vision, 
-                    gesture recognition, and immersive AR interfaces. Leading DoorDash&apos;s innovation in next-generation 
-                    human-computer interaction with multi-modal AI systems.
+                    <strong>Current Research at Meta:</strong> Developing cutting-edge smart glass GenAI multi-modal systems 
+                    and infrastructure. Pioneering the integration of computer vision, natural language processing, and immersive 
+                    AR interfaces that enable seamless human-computer interaction through advanced AI-powered smart glass technology.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">AR/VR</span>
@@ -239,12 +329,12 @@ export default function Home() {
                   <div className="flex items-center mb-4">
                     <span className="text-3xl mr-3">🎓</span>
                     <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
-                      Stanford AI Program
+                      Stanford CS Master Program
                     </h4>
                   </div>
                   <p className="text-slate-700 dark:text-slate-300 mb-4">
-                    Currently enrolled in Stanford&apos;s prestigious AI Computer Science Program, 
-                    advancing expertise in cutting-edge artificial intelligence research.
+                    Currently enrolled in Stanford&apos;s prestigious Computer Science Master Program, 
+                    advancing expertise in cutting-edge AI and computer systems research.
                   </p>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
@@ -253,12 +343,22 @@ export default function Home() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-600 dark:text-slate-400">Program:</span>
-                      <span className="font-semibold text-red-700 dark:text-red-300">AI Computer Science</span>
+                      <span className="font-semibold text-red-700 dark:text-red-300">CS Master (MSCS)</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-600 dark:text-slate-400">Status:</span>
                       <span className="font-semibold text-red-700 dark:text-red-300">In Progress</span>
                     </div>
+                  </div>
+                  <div className="mt-4">
+                    <a 
+                      href="https://cs.stanford.edu/degrees/mscs/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 text-sm font-medium"
+                    >
+                      🔗 Program Details
+                    </a>
                   </div>
                 </div>
               </div>
@@ -298,9 +398,10 @@ export default function Home() {
                       Bilibili Channel
                     </h4>
                   </div>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4">
-                    创建专业技术内容，分享AI学术研究和工业界热点洞察。探讨智能眼镜技术、多模态AI系统及前沿科技趋势。
-                  </p>
+                                <p className="text-slate-600 dark:text-slate-300 mb-4">
+                Creating professional technical content sharing cutting-edge insights on AI academic research and industry innovations. 
+                Exploring smart glass technology, multi-modal AI systems, and emerging tech trends in depth.
+              </p>
                   <a 
                     href="https://www.bilibili.com/video/BV1QfoGYgERZ/" 
                     target="_blank" 
@@ -389,9 +490,10 @@ export default function Home() {
               </h3>
               <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 max-w-4xl mx-auto">
                 <p className="text-slate-600 dark:text-slate-300 mb-8">
-                  As an IEEE Associate Editor, TGO tech leader, and Stanford AI program participant, 
-                  I welcome opportunities for academic collaboration, industry partnerships, editorial discussions, 
-                  and knowledge sharing on cutting-edge technology topics.
+                  Currently working at Meta on smart glass GenAI multi-modal systems. As an IEEE Associate Editor, 
+                  TGO tech leader, and Stanford CS master program participant, I welcome opportunities for academic 
+                  collaboration, industry partnerships, editorial discussions, and knowledge sharing on cutting-edge 
+                  AI and AR technology topics.
                 </p>
                 
                 <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -464,8 +566,8 @@ export default function Home() {
                 
                 <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 rounded-lg">
                   <p className="text-sm text-slate-600 dark:text-slate-300">
-                    <strong>Open to:</strong> Research collaborations • Editorial opportunities • Tech leadership discussions • 
-                    Smart glass R&D partnerships • Multi-modal AI projects • Academic speaking engagements
+                    <strong>Open to:</strong> Smart glass GenAI collaborations • Editorial opportunities • Tech leadership discussions • 
+                    Meta Reality Labs partnerships • Multi-modal AI research • Academic speaking engagements • AR/VR innovation projects
                   </p>
                 </div>
               </div>
@@ -524,8 +626,8 @@ export default function Home() {
                   <div className="text-xs text-blue-600 dark:text-blue-300">鲲鹏会 - 1700+ CTOs & Tech VPs</div>
                 </div>
                 <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded-lg border border-red-200 dark:border-red-800">
-                  <div className="text-sm font-semibold text-red-800 dark:text-red-200">Stanford AI Program</div>
-                  <div className="text-xs text-red-600 dark:text-red-300">Computer Science • In Progress</div>
+                  <div className="text-sm font-semibold text-red-800 dark:text-red-200">Stanford CS Master</div>
+                  <div className="text-xs text-red-600 dark:text-red-300">MSCS Program • In Progress</div>
                 </div>
               </div>
             </div>
@@ -554,8 +656,12 @@ export default function Home() {
                   <span className="font-semibold text-slate-900 dark:text-white">IEEE AE</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-600 dark:text-slate-300">Current Focus</span>
-                  <span className="font-semibold text-slate-900 dark:text-white">Smart Glass</span>
+                  <span className="text-slate-600 dark:text-slate-300">Current Role</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">Meta</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-600 dark:text-slate-300">Focus Area</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">Smart Glass GenAI</span>
                 </div>
               </div>
               <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-600">
@@ -578,31 +684,31 @@ export default function Home() {
               </h4>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="text-slate-900 dark:text-white">Smart glass multi-modal system prototype milestone</div>
-                    <div className="text-slate-500 dark:text-slate-400">1 week ago</div>
+                    <div className="text-slate-900 dark:text-white">Smart glass GenAI multi-modal infrastructure at Meta</div>
+                    <div className="text-slate-500 dark:text-slate-400">Current</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="text-slate-900 dark:text-white">Advanced AR interface development at DoorDash</div>
-                    <div className="text-slate-500 dark:text-slate-400">2 weeks ago</div>
+                    <div className="text-slate-900 dark:text-white">Stanford CS Master program coursework</div>
+                    <div className="text-slate-500 dark:text-slate-400">In Progress</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="text-slate-900 dark:text-white">IEEE T-CSVT editorial review activities</div>
+                    <div className="text-slate-500 dark:text-slate-400">Ongoing</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0"></div>
                   <div>
-                    <div className="text-slate-900 dark:text-white">Multi-modal AI research collaboration</div>
-                    <div className="text-slate-500 dark:text-slate-400">1 month ago</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <div className="text-slate-900 dark:text-white">Computer vision optimization for real-time applications</div>
-                    <div className="text-slate-500 dark:text-slate-400">6 weeks ago</div>
+                    <div className="text-slate-900 dark:text-white">TGO community tech leadership discussions</div>
+                    <div className="text-slate-500 dark:text-slate-400">Active</div>
                   </div>
                 </div>
               </div>
@@ -618,10 +724,10 @@ export default function Home() {
             <div>
               <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Dr. Junwei Zhang</h4>
               <p className="text-sm text-slate-600 dark:text-slate-400">
-                Senior Software Engineer at DoorDash<br/>
+                Meta • Smart Glass GenAI Multi-Modal Systems<br/>
                 IEEE T-CSVT Associate Editor<br/>
                 TGO Elite Tech Leader<br/>
-                Stanford AI Program Participant
+                Stanford CS Master Program
               </p>
             </div>
             <div>
@@ -653,7 +759,7 @@ export default function Home() {
           </div>
           <div className="border-t border-slate-200 dark:border-slate-700 pt-8 text-center">
             <p className="text-slate-600 dark:text-slate-400 text-sm">
-              © 2025 Dr. Junwei Zhang. IEEE Associate Editor | TGO Tech Leader | Stanford AI Program
+              © 2025 Dr. Junwei Zhang. Meta • IEEE Associate Editor • TGO Tech Leader • Stanford CS Master
             </p>
           </div>
         </div>
