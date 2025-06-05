@@ -14,6 +14,9 @@ export default function Home() {
               <a href="#about" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
                 About
               </a>
+              <a href="#leadership" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
+                Leadership
+              </a>
               <a href="#research" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
                 Research
               </a>
@@ -40,17 +43,34 @@ export default function Home() {
                   <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
                     Dr. Junwei Zhang
                   </h2>
+                  
+                  {/* Prestigious Roles */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    <span className="bg-gradient-to-r from-yellow-500 to-amber-500 text-black px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+                      🏆 IEEE T-CSVT Associate Editor
+                    </span>
+                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+                      🚀 TGO Elite Tech Leader
+                    </span>
+                    <span className="bg-gradient-to-r from-red-600 to-red-700 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+                      🎓 Stanford AI Program
+                    </span>
+                  </div>
+                  
                   <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                     Senior Software Engineer at DoorDash and pioneering researcher in cutting-edge technology. 
-                    I&apos;m currently developing next-generation <strong>smart glass multi-modal systems</strong> that 
-                    integrate computer vision, parallel computing, and advanced user interfaces for immersive experiences.
+                    As an <strong>Associate Editor for IEEE T-CSVT</strong> (Impact Factor: 8.4) and member of the elite 
+                    <strong>TGO (鲲鹏会)</strong> tech leadership community, I&apos;m currently developing next-generation 
+                    <strong>smart glass multi-modal systems</strong> that integrate computer vision, parallel computing, 
+                    and advanced user interfaces for immersive experiences.
                   </p>
                   <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-                    With a Ph.D. from Stony Brook University and expertise spanning computational geometry, 
-                    optimal mass transportation, and data center optimization, I bridge theoretical foundations 
-                    with practical innovations. My research portfolio includes pioneering work in 3D computer vision, 
-                    neuroimaging analysis, and network optimization—now applied to revolutionary smart glass technology 
-                    that redefines human-computer interaction.
+                    With a Ph.D. from Stony Brook University and active enrollment in the <strong>Stanford AI Computer Science Program</strong>, 
+                    I bridge theoretical foundations with practical innovations. My research portfolio includes pioneering work in 
+                    3D computer vision, neuroimaging analysis, and network optimization—now applied to revolutionary smart glass 
+                    technology that redefines human-computer interaction. I share insights through my 
+                    <a href="https://www.youtube.com/@junweizhang" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">YouTube channel</a> 
+                    and <a href="https://www.bilibili.com/video/BV1QfoGYgERZ/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Bilibili</a>.
                   </p>
                   <div className="flex gap-4">
                     <a 
@@ -85,21 +105,26 @@ export default function Home() {
                 Research Areas
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 ring-2 ring-blue-500/20">
+                <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 ring-4 ring-gradient-to-r ring-yellow-400/30">
                   <div className="flex items-center mb-3">
                     <span className="text-2xl mr-3">🥽</span>
                     <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
                       Smart Glass Multi-Modal Systems
                     </h4>
+                    <span className="ml-auto bg-gradient-to-r from-yellow-500 to-orange-500 text-black px-2 py-1 rounded-full text-xs font-bold">
+                      🔥 CUTTING-EDGE
+                    </span>
                   </div>
                   <p className="text-slate-600 dark:text-slate-300">
-                    <strong>Current Research:</strong> Developing cutting-edge smart glass technology integrating computer vision, 
-                    gesture recognition, and immersive interfaces for next-generation human-computer interaction.
+                    <strong>Current Research:</strong> Pioneering smart glass technology that seamlessly integrates computer vision, 
+                    gesture recognition, and immersive AR interfaces. Leading DoorDash&apos;s innovation in next-generation 
+                    human-computer interaction with multi-modal AI systems.
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">AR/VR</span>
                     <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Multi-Modal AI</span>
                     <span className="bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 px-2 py-1 rounded text-xs">Industry R&D</span>
+                    <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">Innovation Lead</span>
                   </div>
                 </div>
                 <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
@@ -146,6 +171,145 @@ export default function Home() {
                     <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">Neuroimaging</span>
                     <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Spatial Computing</span>
                   </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Academic Leadership & Community */}
+            <section id="leadership" className="mb-16">
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+                Academic Leadership & Global Communities
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-gradient-to-br from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-lg border-2 border-yellow-200 dark:border-yellow-700">
+                  <div className="flex items-center mb-4">
+                    <span className="text-3xl mr-3">🏆</span>
+                    <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
+                      IEEE T-CSVT Associate Editor
+                    </h4>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300 mb-4">
+                    Associate Editor for IEEE Transactions on Circuits and Systems for Video Technology, 
+                    one of the top journals in video processing and multimedia systems.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-slate-600 dark:text-slate-400">Impact Factor:</span>
+                      <span className="font-semibold text-yellow-700 dark:text-yellow-300">8.4</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-600 dark:text-slate-400">CiteScore:</span>
+                      <span className="font-semibold text-yellow-700 dark:text-yellow-300">13.8</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-600 dark:text-slate-400">Journal Rank:</span>
+                      <span className="font-semibold text-yellow-700 dark:text-yellow-300">Top Tier</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-6 rounded-lg border-2 border-blue-200 dark:border-blue-700">
+                  <div className="flex items-center mb-4">
+                    <span className="text-3xl mr-3">🚀</span>
+                    <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
+                      TGO Elite Tech Leader
+                    </h4>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300 mb-4">
+                    Member of TGO (鲲鹏会), the premier technology leadership community connecting 
+                    1700+ CTOs, CPOs, and Tech VPs globally.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-slate-600 dark:text-slate-400">Community:</span>
+                      <span className="font-semibold text-blue-700 dark:text-blue-300">鲲鹏会</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-600 dark:text-slate-400">Members:</span>
+                      <span className="font-semibold text-blue-700 dark:text-blue-300">1700+ Leaders</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-600 dark:text-slate-400">Selection:</span>
+                      <span className="font-semibold text-blue-700 dark:text-blue-300">Invitation Only</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 p-6 rounded-lg border-2 border-red-200 dark:border-red-700">
+                  <div className="flex items-center mb-4">
+                    <span className="text-3xl mr-3">🎓</span>
+                    <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
+                      Stanford AI Program
+                    </h4>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300 mb-4">
+                    Currently enrolled in Stanford&apos;s prestigious AI Computer Science Program, 
+                    advancing expertise in cutting-edge artificial intelligence research.
+                  </p>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between">
+                      <span className="text-slate-600 dark:text-slate-400">Institution:</span>
+                      <span className="font-semibold text-red-700 dark:text-red-300">Stanford University</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-600 dark:text-slate-400">Program:</span>
+                      <span className="font-semibold text-red-700 dark:text-red-300">AI Computer Science</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-600 dark:text-slate-400">Status:</span>
+                      <span className="font-semibold text-red-700 dark:text-red-300">In Progress</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Content Creation & Knowledge Sharing */}
+            <section id="content" className="mb-16">
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+                Knowledge Sharing & Content Creation
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-center mb-4">
+                    <span className="text-3xl mr-3">📺</span>
+                    <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
+                      YouTube Channel
+                    </h4>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-300 mb-4">
+                    Sharing insights on AI, academic research, and industry trends. 
+                    Deep dives into smart glass technology, multi-modal systems, and the latest innovations in tech.
+                  </p>
+                  <a 
+                    href="https://www.youtube.com/@junweizhang" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors"
+                  >
+                    <span>📺</span>
+                    Subscribe on YouTube
+                  </a>
+                </div>
+                <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-center mb-4">
+                    <span className="text-3xl mr-3">🎬</span>
+                    <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
+                      Bilibili Channel
+                    </h4>
+                  </div>
+                  <p className="text-slate-600 dark:text-slate-300 mb-4">
+                    创建专业技术内容，分享AI学术研究和工业界热点洞察。探讨智能眼镜技术、多模态AI系统及前沿科技趋势。
+                  </p>
+                  <a 
+                    href="https://www.bilibili.com/video/BV1QfoGYgERZ/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg transition-colors"
+                  >
+                    <span>🎬</span>
+                    Watch on Bilibili
+                  </a>
                 </div>
               </div>
             </section>
@@ -221,46 +385,88 @@ export default function Home() {
             {/* Contact */}
             <section id="contact" className="text-center mb-16">
               <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8">
-                Get in Touch
+                Connect & Collaborate
               </h3>
-              <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 max-w-2xl mx-auto">
-                <p className="text-slate-600 dark:text-slate-300 mb-6">
-                  I welcome opportunities for collaboration, discussions about research, 
-                  and academic networking.
+              <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 max-w-4xl mx-auto">
+                <p className="text-slate-600 dark:text-slate-300 mb-8">
+                  As an IEEE Associate Editor, TGO tech leader, and Stanford AI program participant, 
+                  I welcome opportunities for academic collaboration, industry partnerships, editorial discussions, 
+                  and knowledge sharing on cutting-edge technology topics.
                 </p>
-                <div className="flex justify-center gap-6">
-                  <a 
-                    href="mailto:junwei.zhang@stonybrook.edu" 
-                    className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
-                  >
-                    Email
-                  </a>
-                  <a 
-                    href="https://scholar.google.com/citations?user=FkAGB3MAAAAJ&hl=en" 
-                    className="flex items-center gap-1 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="ai ai-google-scholar"></i>
-                    Google Scholar
-                  </a>
-                  <a 
-                    href="https://www.linkedin.com/in/junweizhangcs/" 
-                    className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    LinkedIn
-                  </a>
-                  <a 
-                    href="https://orcid.org/0000-0000-0000-0000" 
-                    className="flex items-center gap-1 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="ai ai-orcid"></i>
-                    ORCID
-                  </a>
+                
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div className="text-center">
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-3">📧 Professional</h4>
+                    <div className="space-y-2">
+                      <a 
+                        href="mailto:junwei.zhang@stonybrook.edu" 
+                        className="block text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                      >
+                        Email
+                      </a>
+                      <a 
+                        href="https://www.linkedin.com/in/junweizhangcs/" 
+                        className="block text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        LinkedIn
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-3">🎓 Academic</h4>
+                    <div className="space-y-2">
+                      <a 
+                        href="https://scholar.google.com/citations?user=FkAGB3MAAAAJ&hl=en" 
+                        className="flex items-center justify-center gap-1 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="ai ai-google-scholar"></i>
+                        Google Scholar
+                      </a>
+                      <a 
+                        href="https://orcid.org/0000-0000-0000-0000" 
+                        className="flex items-center justify-center gap-1 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="ai ai-orcid"></i>
+                        ORCID
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <h4 className="font-semibold text-slate-900 dark:text-white mb-3">📺 Content</h4>
+                    <div className="space-y-2">
+                      <a 
+                        href="https://www.youtube.com/@junweizhang" 
+                        className="block text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 font-medium"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        YouTube
+                      </a>
+                      <a 
+                        href="https://www.bilibili.com/video/BV1QfoGYgERZ/" 
+                        className="block text-pink-600 hover:text-pink-700 dark:text-pink-400 dark:hover:text-pink-300 font-medium"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Bilibili
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 rounded-lg">
+                  <p className="text-sm text-slate-600 dark:text-slate-300">
+                    <strong>Open to:</strong> Research collaborations • Editorial opportunities • Tech leadership discussions • 
+                    Smart glass R&D partnerships • Multi-modal AI projects • Academic speaking engagements
+                  </p>
                 </div>
               </div>
             </section>
@@ -303,6 +509,27 @@ export default function Home() {
             {/* Visitor Analytics */}
             <VisitorAnalytics />
 
+            {/* Academic Leadership */}
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+              <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                🏆 Academic Leadership
+              </h4>
+              <div className="space-y-4">
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                  <div className="text-sm font-semibold text-yellow-800 dark:text-yellow-200">IEEE T-CSVT Associate Editor</div>
+                  <div className="text-xs text-yellow-600 dark:text-yellow-300">Impact Factor: 8.4 | CiteScore: 13.8</div>
+                </div>
+                <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="text-sm font-semibold text-blue-800 dark:text-blue-200">TGO Elite Tech Leader</div>
+                  <div className="text-xs text-blue-600 dark:text-blue-300">鲲鹏会 - 1700+ CTOs & Tech VPs</div>
+                </div>
+                <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded-lg border border-red-200 dark:border-red-800">
+                  <div className="text-sm font-semibold text-red-800 dark:text-red-200">Stanford AI Program</div>
+                  <div className="text-xs text-red-600 dark:text-red-300">Computer Science • In Progress</div>
+                </div>
+              </div>
+            </div>
+
             {/* Quick Stats */}
             <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
               <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
@@ -323,8 +550,8 @@ export default function Home() {
                   <span className="font-semibold text-slate-900 dark:text-white">6</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-slate-600 dark:text-slate-300">Industry Experience</span>
-                  <span className="font-semibold text-slate-900 dark:text-white">Senior SWE</span>
+                  <span className="text-slate-600 dark:text-slate-300">Editorial Roles</span>
+                  <span className="font-semibold text-slate-900 dark:text-white">IEEE AE</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-600 dark:text-slate-300">Current Focus</span>
@@ -385,11 +612,50 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 py-8">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-slate-600 dark:text-slate-400">
-            © 2024 Junwei Zhang. All rights reserved.
-          </p>
+      <footer className="bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Dr. Junwei Zhang</h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                Senior Software Engineer at DoorDash<br/>
+                IEEE T-CSVT Associate Editor<br/>
+                TGO Elite Tech Leader<br/>
+                Stanford AI Program Participant
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Research Focus</h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
+                Smart Glass Multi-Modal Systems<br/>
+                Computer Vision & AR/VR<br/>
+                Computational Geometry<br/>
+                Parallel Computing & AI
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Connect</h4>
+              <div className="flex flex-col gap-2 text-sm">
+                <a href="https://scholar.google.com/citations?user=FkAGB3MAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
+                  Google Scholar
+                </a>
+                <a href="https://www.linkedin.com/in/junweizhangcs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
+                  LinkedIn
+                </a>
+                <a href="https://www.youtube.com/@junweizhang" target="_blank" rel="noopener noreferrer" className="text-red-600 dark:text-red-400 hover:underline">
+                  YouTube Channel
+                </a>
+                <a href="https://www.bilibili.com/video/BV1QfoGYgERZ/" target="_blank" rel="noopener noreferrer" className="text-pink-600 dark:text-pink-400 hover:underline">
+                  Bilibili
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-slate-200 dark:border-slate-700 pt-8 text-center">
+            <p className="text-slate-600 dark:text-slate-400 text-sm">
+              © 2025 Dr. Junwei Zhang. IEEE Associate Editor | TGO Tech Leader | Stanford AI Program
+            </p>
+          </div>
         </div>
       </footer>
     </div>

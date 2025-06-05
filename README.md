@@ -1,17 +1,31 @@
-# Junwei Zhang - Personal Academic Website
+# Dr. Junwei Zhang - Academic & Professional Website
 
 > **Live Site**: [https://junweizhang23.github.io/](https://junweizhang23.github.io/)
 
-A modern, professional academic website showcasing research contributions, publications, and professional experience.
+Professional website showcasing distinguished research contributions, editorial leadership, and cutting-edge industry innovations.
 
-## 🎯 Overview
+## 🏆 About Dr. Junwei Zhang
 
-This repository contains my personal academic website built with **Next.js** and **Tailwind CSS**. The site features:
+**Academic Leadership & Global Recognition:**
+- 🏆 **IEEE T-CSVT Associate Editor** (Impact Factor: 8.4, CiteScore: 13.8)
+- 🚀 **TGO Elite Tech Leader** - Member of 鲲鹏会 (1700+ CTOs & Tech VPs)
+- 🎓 **Stanford AI Program** - Currently enrolled in AI Computer Science Program
 
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Academic Focus**: Dedicated sections for research, publications, and professional networking
-- **Modern Features**: Dark/light mode, visitor analytics, comments system
-- **Performance**: Static site generation for fast loading and SEO optimization
+**Professional Excellence:**
+- 💼 **Senior Software Engineer at DoorDash** - Smart Glass Multi-Modal Systems
+- 🥽 **Research Focus**: AR/VR, Computer Vision, Multi-Modal AI
+- 📊 **Academic Impact**: 155+ citations, h-index: 6, 10+ publications
+
+## 🎯 Website Features
+
+This repository contains a modern academic website built with **Next.js** and **Tailwind CSS**:
+
+- **Responsive Design**: Optimized for all devices with professional academic styling
+- **Leadership Showcase**: Dedicated sections highlighting editorial roles and tech community leadership
+- **Research Portfolio**: Comprehensive research areas with smart glass technology emphasis
+- **Content Integration**: YouTube and Bilibili channels for knowledge sharing
+- **Modern Features**: Dark/light mode, visitor analytics, automated Google Scholar updates
+- **Performance**: Static site generation optimized for GitHub Pages
 
 
 ## 📧 Contact
