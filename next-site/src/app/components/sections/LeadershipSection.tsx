@@ -4,7 +4,34 @@ export default function LeadershipSection() {
       <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
         Academic Leadership & Global Communities
       </h3>
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-4 gap-6">
+        <div className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-6 rounded-lg border-2 border-purple-200 dark:border-purple-700">
+          <div className="flex items-center mb-4">
+            <span className="text-3xl mr-3">🎖️</span>
+            <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
+              IEEE Senior Member
+            </h4>
+          </div>
+          <p className="text-slate-700 dark:text-slate-300 mb-4">
+            Senior Member of the Institute of Electrical and Electronics Engineers, 
+            recognizing significant contributions to the engineering profession.
+          </p>
+          <div className="space-y-2 text-sm">
+            <div className="flex justify-between">
+              <span className="text-slate-600 dark:text-slate-400">Organization:</span>
+              <span className="font-semibold text-purple-700 dark:text-purple-300">IEEE</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-slate-600 dark:text-slate-400">Grade:</span>
+              <span className="font-semibold text-purple-700 dark:text-purple-300">Senior Member</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-slate-600 dark:text-slate-400">Recognition:</span>
+              <span className="font-semibold text-purple-700 dark:text-purple-300">Professional Achievement</span>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-gradient-to-br from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-lg border-2 border-yellow-200 dark:border-yellow-700">
           <div className="flex items-center mb-4">
             <span className="text-3xl mr-3">🏆</span>
