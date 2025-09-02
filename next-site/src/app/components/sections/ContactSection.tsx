@@ -6,13 +6,13 @@ export default function ContactSection() {
       </h3>
       <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 max-w-4xl mx-auto">
         <p className="text-slate-600 dark:text-slate-300 mb-8">
-          Currently working at Meta on smart glass GenAI multi-modal systems. As an IEEE Associate Editor, 
-          TGO tech leader, and Stanford CS master program participant, I welcome opportunities for academic 
-          collaboration, industry partnerships, editorial discussions, and knowledge sharing on cutting-edge 
-          AI and AR technology topics.
+          Currently working at Meta on smart glass GenAI multi-modal systems. As an IEEE Senior Member, 
+          IEEE T-CSVT Associate Editor, TGO tech leader, and Stanford CS master program participant, I welcome 
+          opportunities for academic collaboration, industry partnerships, editorial discussions, and knowledge 
+          sharing on cutting-edge AI and AR technology topics.
         </p>
         
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-4 gap-6 mb-8">
           <div className="text-center">
             <h4 className="font-semibold text-slate-900 dark:text-white mb-3">📧 Professional</h4>
             <div className="space-y-2">
@@ -53,6 +53,28 @@ export default function ContactSection() {
               >
                 <i className="ai ai-orcid"></i>
                 ORCID
+              </a>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <h4 className="font-semibold text-slate-900 dark:text-white mb-3">🐦 Social</h4>
+            <div className="space-y-2">
+              <a 
+                href="https://twitter.com/junweizhang" 
+                className="block text-sky-600 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300 font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitter/X
+              </a>
+              <a 
+                href="https://github.com/junweizhang23" 
+                className="block text-slate-600 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300 font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
               </a>
             </div>
           </div>

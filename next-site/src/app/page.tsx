@@ -5,6 +5,7 @@ import ResearchSection from './components/sections/ResearchSection';
 import LeadershipSection from './components/sections/LeadershipSection';
 import ContentSection from './components/sections/ContentSection';
 import PublicationsSection from './components/sections/PublicationsSection';
+import UpdatesSection from './components/sections/UpdatesSection';
 import ContactSection from './components/sections/ContactSection';
 import CommentsSection from './components/sections/CommentsSection';
 import Sidebar from './components/Sidebar';
@@ -21,6 +22,7 @@ export default function Home() {
           {/* Main Content Area */}
           <main className="lg:col-span-3">
             <HeroSection />
+            <UpdatesSection />
             <ExperienceSection />
             <ResearchSection />
             <LeadershipSection />
