@@ -20,15 +20,58 @@ export default function VisitorAnalytics() {
     // Fetch visitor statistics
     const fetchStats = async () => {
       try {
-        const response = await fetch('https://api.countapi.xyz/get/junweizhang23.github.io/visits');
-        const data = await response.json();
-        setStats(prev => ({
-          ...prev,
-          totalVisits: data.value || 0,
-          todayVisits: Math.floor(data.value / 30) || 0 // Approximation
-        }));
+        // Try multiple visitor tracking APIs
+        const promises = [
+          fetch('https://api.countapi.xyz/hit/junweizhang23.github.io/visits'),
+          fetch('https://api.countapi.xyz/get/junweizhang23.github.io/visits')
+        ];
+        
+        const [hitResponse, getResponse] = await Promise.allSettled(promises);
+        
+        let totalVisits = 0;
+        if (hitResponse.status === 'fulfilled') {
+          const hitData = await hitResponse.value.json();
+          totalVisits = hitData.value || 0;
+        } else if (getResponse.status === 'fulfilled') {
+          const getData = await getResponse.value.json();
+          totalVisits = getData.value || 0;
+        }
+        
+        // Get today's date and calculate today's visits
+        const today = new Date().toISOString().split('T')[0];
+        const todayKey = `junweizhang23.github.io/daily/${today}`;
+        
+        try {
+          const todayResponse = await fetch(`https://api.countapi.xyz/hit/${todayKey}`);
+          const todayData = await todayResponse.json();
+          
+          setStats({
+            totalVisits: totalVisits,
+            todayVisits: todayData.value || 0,
+            onlineUsers: Math.min(Math.max(1, Math.floor(totalVisits / 100)), 5) // Estimate
+          });
+        } catch {
+          setStats({
+            totalVisits: totalVisits,
+            todayVisits: Math.floor(totalVisits / 30) || 0, // Fallback approximation
+            onlineUsers: 1
+          });
+        }
+        
       } catch (error) {
         console.error('Failed to fetch visitor stats:', error);
+        // Fallback to localStorage-based counting for GitHub Pages
+        const localVisits = parseInt(localStorage.getItem('siteVisits') || '0') + 1;
+        localStorage.setItem('siteVisits', localVisits.toString());
+        
+        const todayVisits = parseInt(localStorage.getItem(`visits_${new Date().toDateString()}`) || '0') + 1;
+        localStorage.setItem(`visits_${new Date().toDateString()}`, todayVisits.toString());
+        
+        setStats({
+          totalVisits: localVisits,
+          todayVisits: todayVisits,
+          onlineUsers: 1
+        });
       }
       setIsLoaded(true);
     };
@@ -79,10 +122,13 @@ export default function VisitorAnalytics() {
           Recent visitors from:
         </div>
         <div className="flex flex-wrap justify-center gap-2 text-xs">
-          <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded">🇺🇸 USA</span>
-          <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">🇨🇳 China</span>
-          <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded">🇬🇧 UK</span>
-          <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded">🇩🇪 Germany</span>
+          <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded animate-pulse">🇺🇸 USA</span>
+          <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded animate-pulse" style={{animationDelay: '0.3s'}}>🇨🇳 China</span>
+          <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded animate-pulse" style={{animationDelay: '0.6s'}}>🇬🇧 UK</span>
+          <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded animate-pulse" style={{animationDelay: '0.9s'}}>🇩🇪 Germany</span>
+        </div>
+        <div className="text-xs text-slate-500 dark:text-slate-400 mt-2">
+          *Visitor tracking limited on GitHub Pages
         </div>
       </div>
     </div>
