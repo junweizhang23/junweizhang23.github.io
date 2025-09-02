@@ -1,45 +1,8 @@
 {
-  "profileId": "FkAGB3MAAAAJ",
-  "profileUrl": "https://scholar.google.com/citations?user=FkAGB3MAAAAJ&hl=en",
-  "linkedinUrl": "https://www.linkedin.com/in/junweizhangcs/",
-  "citations": 155,
+  "citations": 152,
   "hIndex": 6,
   "i10Index": 3,
   "publications": 10,
-  "researchSince": 2015,
-  "currentRole": "Senior Software Engineer",
-  "currentCompany": "DoorDash",
-  "currentResearch": "Smart Glass Multi-Modal Systems",
-  "lastUpdated": "2024-06-04T21:00:00.000Z",
-  "lastChecked": "2024-06-04T21:00:00.000Z",
-  "updateFrequency": "daily",
-  "collaborators": [
-    "David Xianfeng Gu",
-    "Thomas Robertazzi", 
-    "Li Shi",
-    "Yalin Wang",
-    "Kewei Chen",
-    "Wen (Vincent) Zhang",
-    "Mayank Goswami",
-    "Jie Gao",
-    "Emil Saucan",
-    "Siming Li"
-  ],
-  "researchAreas": [
-    "Smart Glass Multi-Modal Systems",
-    "Computational Geometry",
-    "Parallel Computing", 
-    "3D Computer Vision",
-    "AR/VR Technology"
-  ],
-  "affiliations": [
-    "DoorDash (Senior Software Engineer)",
-    "Stony Brook University (Ph.D.)"
-  ],
-  "currentFocus": [
-    "Smart Glass Technology Development",
-    "Multi-Modal AI Systems",
-    "Immersive User Interfaces",
-    "Computer Vision for AR/VR"
-  ]
-} 
+  "lastUpdated": "2025-09-02T05:58:03.342Z",
+  "profileUrl": "https://scholar.google.com/citations?user=FkAGB3MAAAAJ&hl=en"
+}
