@@ -60,12 +60,23 @@ export default function HeroSection() {
           </div>
         </div>
         <div className="flex justify-center">
-          <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-slate-200 dark:border-slate-700 shadow-lg">
+          <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-slate-200 dark:border-slate-700 shadow-lg bg-slate-100 dark:bg-slate-700">
             <img
               src="/junwei.jpeg"
-              alt="Dr. Junwei Zhang"
+              alt="Dr. Junwei Zhang - IEEE Senior Member, Smart Glass GenAI Systems Engineer at Meta"
               className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.nextElementSibling?.classList.remove('hidden');
+              }}
             />
+            <div className="hidden w-full h-full flex items-center justify-center text-slate-500 dark:text-slate-400 text-center p-4">
+              <div>
+                <div className="text-4xl mb-2">👨‍💼</div>
+                <div className="text-sm">Dr. Junwei Zhang</div>
+                <div className="text-xs">IEEE Senior Member</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
