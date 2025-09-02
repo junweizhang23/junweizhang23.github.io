@@ -73,10 +73,10 @@ The site includes automated Google Scholar metrics updates:
 
 The main page (`page.tsx`) contains these sections:
 - Hero/About section with academic credentials
-- Leadership roles (IEEE Associate Editor, TGO membership)
+- Leadership roles (IEEE Senior Member, IEEE T-CSVT Associate Editor, TGO membership)
 - Professional experience timeline
 - Research areas and focus
-- Publications list
+- Publications list (including PhD thesis)
 - Contact information
 
 When editing content, maintain the existing Tailwind CSS classes and responsive design patterns.

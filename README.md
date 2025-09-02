@@ -7,6 +7,7 @@ Professional academic website showcasing research contributions, editorial leade
 ## 🏆 About Dr. Junwei Zhang
 
 **Academic Leadership & Global Recognition:**
+- 🎖️ **IEEE Senior Member** - Professional recognition for significant contributions
 - 🏆 **IEEE T-CSVT Associate Editor** (Impact Factor: 8.4, CiteScore: 13.8)
 - 🚀 **TGO Elite Tech Leader** - Member of 鲲鹏会 (1700+ CTOs & Tech VPs)
 - 🎓 **Stanford CS Master Program** - Currently enrolled
