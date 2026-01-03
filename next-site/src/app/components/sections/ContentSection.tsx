@@ -5,6 +5,7 @@ export default function ContentSection() {
         Knowledge Sharing & Content Creation
       </h3>
       <div className="grid md:grid-cols-2 gap-6">
+        {/* YouTube Card */}
         <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
           <div className="flex items-center mb-4">
             <span className="text-3xl mr-3">📺</span>

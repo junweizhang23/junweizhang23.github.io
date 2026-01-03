@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -87,11 +88,35 @@ export default function RootLayout({
         {/* Visitor Analytics */}
         <script async src="https://api.countapi.xyz/hit/junweizhang23.github.io/visits" />
         
-        {/* Optional: ClustrMaps for visitor geography */}
-        <script 
-          src="//clustrmaps.com/map_v2.js?d=YOUR_MAP_ID&cl=ffffff&w=300"
-          async
+        {/* Google Analytics 4 - Replace G-XXXXXXXXXX with your GA4 Measurement ID */}
+        {/* Uncomment and configure when you have your GA4 ID */}
+        {/*
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
         />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+        */}
+        
+        {/* Plausible Analytics - Privacy-friendly alternative */}
+        {/* Uncomment and replace 'junweizhang23.github.io' with your domain when ready */}
+        {/*
+        <Script
+          defer
+          data-domain="junweizhang23.github.io"
+          src="https://plausible.io/js/script.js"
+          strategy="afterInteractive"
+        />
+        */}
         
         {/* Structured Data for SEO */}
         <script
