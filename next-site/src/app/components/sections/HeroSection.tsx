@@ -30,9 +30,10 @@ export default function HeroSection() {
           </div>
           
           <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-            Currently working at <strong>Meta</strong> on cutting-edge <strong>smart glass GenAI multi-modal systems</strong>. 
-            Ph.D. from <strong>Stony Brook University</strong>, currently enrolled in <a href="https://cs.stanford.edu/degrees/mscs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Stanford&apos;s CS Master Program</a>. 
-            Extensive industry experience from <strong>Meta</strong>, <strong>DoorDash</strong>, <strong>Microsoft Azure</strong>, and <strong>Uber</strong>.
+            Currently working at <strong className="text-blue-600 dark:text-blue-400">Meta</strong> on cutting-edge <strong>smart glass GenAI multi-modal systems</strong>. 
+            Ph.D. from <a href="https://www.stonybrook.edu/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Stony Brook University</a>, 
+            currently enrolled in <a href="https://cs.stanford.edu/degrees/mscs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Stanford&apos;s CS Master Program</a>. 
+            Previous industry experience at <strong>DoorDash</strong>, <strong>Microsoft Azure</strong>, and <strong>Uber</strong>.
           </p>
           <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
             Research focus: smart glass technology, multi-modal AI, computational geometry, and parallel computing. 
