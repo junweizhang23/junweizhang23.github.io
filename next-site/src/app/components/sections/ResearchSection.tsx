@@ -5,7 +5,7 @@ export default function ResearchSection() {
         Research Areas
       </h3>
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 ring-4 ring-gradient-to-r ring-yellow-400/30">
+        <div className="research-card bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700 ring-4 ring-gradient-to-r ring-yellow-400/30">
           <div className="flex items-center mb-3">
             <span className="text-2xl mr-3">🥽</span>
             <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
@@ -27,7 +27,7 @@ export default function ResearchSection() {
             <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded text-xs">Innovation Lead</span>
           </div>
         </div>
-        <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="research-card bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
           <div className="flex items-center mb-3">
             <span className="text-2xl mr-3">📐</span>
             <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
@@ -42,7 +42,7 @@ export default function ResearchSection() {
             <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">Optimal Transport</span>
           </div>
         </div>
-        <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="research-card bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
           <div className="flex items-center mb-3">
             <span className="text-2xl mr-3">⚡</span>
             <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
@@ -57,7 +57,7 @@ export default function ResearchSection() {
             <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">Network Optimization</span>
           </div>
         </div>
-        <div className="research-card bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="research-card bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
           <div className="flex items-center mb-3">
             <span className="text-2xl mr-3">👁️</span>
             <h4 className="text-xl font-semibold text-slate-900 dark:text-white">

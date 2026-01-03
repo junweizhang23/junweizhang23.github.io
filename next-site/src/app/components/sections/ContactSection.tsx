@@ -4,7 +4,7 @@ export default function ContactSection() {
       <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8">
         Connect & Collaborate
       </h3>
-      <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 max-w-4xl mx-auto">
+      <div className="bg-stone-50/80 dark:bg-slate-800 p-8 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700 max-w-4xl mx-auto">
         <p className="text-slate-600 dark:text-slate-300 mb-8">
           Currently working at Meta on smart glass GenAI multi-modal systems. As an IEEE Senior Member, 
           IEEE T-CSVT Associate Editor, TGO tech leader, and Stanford CS master program participant, I welcome 

@@ -54,7 +54,7 @@ export default function CommentsSection() {
       <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
         Academic Discussions
       </h3>
-      <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+      <div className="bg-stone-50/80 dark:bg-slate-800 p-8 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
         <p className="text-slate-600 dark:text-slate-300 mb-6 text-center">
           Join the conversation about research, collaborations, and academic topics.
         </p>

@@ -5,7 +5,7 @@ export default function PublicationsSection() {
         Recent Publications
       </h3>
       <div className="space-y-6">
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
           <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
             Area-preserving mesh parameterization for poly-annulus surfaces based on optimal mass transportation
           </h4>
@@ -23,7 +23,7 @@ export default function PublicationsSection() {
             <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">DOI</a>
           </div>
         </div>
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
           <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
             Volume preserving mesh parameterization based on optimal mass transportation
           </h4>
@@ -41,7 +41,7 @@ export default function PublicationsSection() {
             <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">DOI</a>
           </div>
         </div>
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
           <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
             Coflow Scheduling in Data Centers: Routing and Bandwidth Allocation
           </h4>

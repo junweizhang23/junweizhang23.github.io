@@ -49,7 +49,7 @@ export default function HeroSection() {
             </a>
             <a 
               href="#contact" 
-              className="border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 px-6 py-3 rounded-lg font-medium transition-colors"
+              className="border border-stone-300 dark:border-slate-600 hover:bg-stone-50 dark:hover:bg-slate-800 px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get in Touch
             </a>

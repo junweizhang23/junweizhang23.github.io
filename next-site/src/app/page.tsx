@@ -15,7 +15,7 @@ import Footer from './components/Footer';
 export default function Home() {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+      <div className="min-h-screen bg-gradient-to-br from-stone-50 via-neutral-50 to-amber-50/30 dark:from-slate-900 dark:to-slate-800">
         <Header />
 
       {/* Main Content */}

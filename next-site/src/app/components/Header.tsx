@@ -6,7 +6,7 @@ export default function Header() {
   const { language, setLanguage, t } = useLanguage();
 
   return (
-    <header className="border-b border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-10">
+    <header className="border-b border-stone-200/50 dark:border-slate-700 bg-stone-50/90 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-10">
       <nav className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white">

@@ -47,7 +47,7 @@ export default function Sidebar() {
   return (
     <aside className="lg:col-span-1 space-y-8">
       {/* Quick Stats */}
-      <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+      <div className="bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
         <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
           <i className="ai ai-google-scholar text-blue-600 dark:text-blue-400"></i>
           📊 Academic & Industry Impact
@@ -98,7 +98,7 @@ export default function Sidebar() {
       </div>
 
       {/* Recent Activity */}
-      <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+      <div className="bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
         <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
           🔄 Recent Activity
         </h4>

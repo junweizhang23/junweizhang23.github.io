@@ -6,7 +6,7 @@ export default function ContentSection() {
       </h3>
       <div className="grid md:grid-cols-2 gap-6">
         {/* YouTube Card */}
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
           <div className="flex items-center mb-4">
             <span className="text-3xl mr-3">📺</span>
             <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
@@ -27,7 +27,7 @@ export default function ContentSection() {
             Subscribe on YouTube
           </a>
         </div>
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+        <div className="bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
           <div className="flex items-center mb-4">
             <span className="text-3xl mr-3">🎬</span>
             <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
