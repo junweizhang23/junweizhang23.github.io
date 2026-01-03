@@ -75,24 +75,6 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
         />
         
-        {/* Giscus Comments */}
-        <script 
-          src="https://giscus.app/client.js"
-          data-repo="junweizhang23/junweizhang23.github.io"
-          data-repo-id="[REPO_ID]"
-          data-category="General"
-          data-category-id="[CATEGORY_ID]"
-          data-mapping="pathname"
-          data-strict="0"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="top"
-          data-theme="preferred_color_scheme"
-          data-lang="en"
-          crossOrigin="anonymous"
-          async
-        />
-        
         {/* Visitor Analytics */}
         <script async src="https://api.countapi.xyz/hit/junweizhang23.github.io/visits" />
         

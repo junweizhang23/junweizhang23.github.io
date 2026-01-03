@@ -30,24 +30,13 @@ export default function HeroSection() {
           </div>
           
           <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-            Currently working at <strong>Meta</strong> on cutting-edge <strong>smart glass GenAI multi-modal systems</strong> 
-            and infrastructure. As an <strong>IEEE Senior Member</strong>, <strong>Associate Editor for IEEE T-CSVT</strong> (Impact Factor: 8.4), 
-            and member of the elite <strong>TGO (鲲鹏会)</strong> tech leadership community, I&apos;m pioneering the next generation 
-            of human-computer interaction through advanced AI-powered smart glass technology.
-          </p>
-          <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-            With a Ph.D. from <strong>Stony Brook University</strong> (advisors: Prof. Thomas Robertazzi & Prof. Esther Arkin) 
-            and active enrollment in <a href="https://cs.stanford.edu/degrees/mscs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Stanford&apos;s CS Master Program</a>, 
-            I bring extensive industry experience from <strong>Meta</strong>, <strong>DoorDash</strong> (Tech Lead), 
-            <strong>Microsoft Azure</strong>, and <strong>Uber</strong> (Palo Alto & Seattle).
+            Currently working at <strong>Meta</strong> on cutting-edge <strong>smart glass GenAI multi-modal systems</strong>. 
+            Ph.D. from <strong>Stony Brook University</strong>, currently enrolled in <a href="https://cs.stanford.edu/degrees/mscs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Stanford&apos;s CS Master Program</a>. 
+            Extensive industry experience from <strong>Meta</strong>, <strong>DoorDash</strong>, <strong>Microsoft Azure</strong>, and <strong>Uber</strong>.
           </p>
           <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-            My academic journey began with bachelor degrees in <strong>Computer Science and Mathematics</strong> from 
-            <strong>Shandong University</strong>, followed by research at <strong>University of Florida</strong> with Prof. Andy Li&apos;s S3Lab. 
-            During my Ph.D. at Stony Brook, I collaborated with distinguished researchers including Prof. Xianfeng David Gu, 
-            Prof. Yalin Wang (ASU), and Prof. Jie Gao on 3D computer vision, geometry processing, medical image processing, 
-            and network optimization—expertise now applied to revolutionary GenAI multi-modal glass models. 
-            I share insights through my <a href="https://www.youtube.com/@junweizhang" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">YouTube channel</a> 
+            Research focus: smart glass technology, multi-modal AI, computational geometry, and parallel computing. 
+            Sharing insights through <a href="https://www.youtube.com/@junweizhang" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">YouTube</a> 
             and <a href="https://www.bilibili.com/video/BV1QfoGYgERZ/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Bilibili</a>.
           </p>
           <div className="flex gap-4">

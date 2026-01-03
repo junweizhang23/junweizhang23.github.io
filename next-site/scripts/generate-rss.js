@@ -6,7 +6,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-// RSS Feed data - sync with UpdatesSection
+// RSS Feed data - manually maintained updates
 const updates = [
   {
     date: "2025-01-02",

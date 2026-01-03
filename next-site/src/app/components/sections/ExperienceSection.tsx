@@ -7,7 +7,7 @@ interface Experience {
   description: string;
   tags: string[];
   color: string;
-  icon: string;
+  logo: string;
   location?: string;
 }
 
@@ -15,40 +15,40 @@ export default function ExperienceSection() {
   const experiences: Experience[] = [
     {
       company: 'Meta',
-      role: 'Smart Glass GenAI Multi-Modal Systems',
+      role: 'Smart Glass GenAI',
       period: '2024 - Present',
-      description: 'Working on cutting-edge smart glass technology and infrastructure, developing GenAI multi-modal glass models for next-generation AR experiences.',
-      tags: ['Smart Glass', 'GenAI', 'Multi-Modal AI'],
+      description: 'Wearable GenAI multi-modal systems',
+      tags: ['GenAI', 'Wearable'],
       color: 'blue',
-      icon: 'M',
+      logo: 'https://logo.clearbit.com/meta.com',
       location: 'Current Position'
     },
     {
       company: 'DoorDash',
       role: 'Tech Lead',
-      period: '2022 - 2024',
-      description: 'Led technology initiatives and engineering teams, driving innovation in large-scale distributed systems and smart technology applications.',
-      tags: ['Tech Leadership', 'Distributed Systems'],
+      period: '2022-2023',
+      description: 'Martech platform development',
+      tags: ['Martech'],
       color: 'orange',
-      icon: 'D'
+      logo: 'https://logo.clearbit.com/doordash.com'
     },
     {
       company: 'Microsoft Azure',
       role: 'Software Engineer',
       period: '2020 - 2022',
-      description: 'Contributed to cloud computing infrastructure and Azure services, working on large-scale distributed systems and cloud technologies.',
-      tags: ['Cloud Computing', 'Azure'],
+      description: 'Cloud Storage infrastructure',
+      tags: ['Cloud Storage'],
       color: 'blue',
-      icon: 'M'
+      logo: 'https://logo.clearbit.com/microsoft.com'
     },
     {
       company: 'Uber',
       role: 'Software Engineer',
       period: '2018 - 2020',
-      description: 'Worked across multiple offices developing high-performance systems for ride-sharing and logistics platforms at global scale.',
-      tags: ['High Performance', 'Logistics'],
+      description: 'Distributed platform systems',
+      tags: ['Distributed Platform'],
       color: 'slate',
-      icon: 'U',
+      logo: 'https://logo.clearbit.com/uber.com',
       location: 'Palo Alto & Seattle'
     }
   ];
@@ -96,10 +96,23 @@ export default function ExperienceSection() {
                 key={index}
                 className="relative flex items-start gap-6 group hover:scale-[1.02] transition-transform duration-300"
               >
-                {/* Timeline Dot */}
+                {/* Timeline Dot with Logo */}
                 <div className="relative z-10 flex-shrink-0">
-                  <div className={`w-16 h-16 ${colors.bg} ${colors.border} border-2 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow`}>
-                    <span className={`${colors.text} font-bold text-xl`}>{exp.icon}</span>
+                  <div className={`w-16 h-16 ${colors.bg} ${colors.border} border-2 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow overflow-hidden`}>
+                    <img 
+                      src={exp.logo} 
+                      alt={exp.company}
+                      className="w-12 h-12 object-contain p-1"
+                      onError={(e) => {
+                        // Fallback to company initial if logo fails to load
+                        const target = e.currentTarget;
+                        target.style.display = 'none';
+                        const fallback = document.createElement('span');
+                        fallback.className = `${colors.text} font-bold text-xl`;
+                        fallback.textContent = exp.company.charAt(0);
+                        target.parentElement?.appendChild(fallback);
+                      }}
+                    />
                   </div>
                   {/* Animated pulse effect */}
                   <div className={`absolute inset-0 ${colors.bg} rounded-lg animate-ping opacity-20`}></div>
@@ -107,12 +120,12 @@ export default function ExperienceSection() {
                 
                 {/* Content Card */}
                 <div className={`flex-1 ${colors.bg} ${colors.border} border rounded-lg p-6 shadow-sm group-hover:shadow-md transition-shadow`}>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                     <div>
                       <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-1">
                         {exp.company}
                       </h4>
-                      <p className={`${colors.text} font-medium`}>
+                      <p className={`${colors.text} font-medium text-sm`}>
                         {exp.role}
                         {exp.location && ` • ${exp.location}`}
                       </p>
@@ -124,7 +137,7 @@ export default function ExperienceSection() {
                     </div>
                   </div>
                   
-                  <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 mb-3 text-sm">
                     {exp.description}
                   </p>
                   

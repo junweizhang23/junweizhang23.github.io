@@ -5,29 +5,43 @@ import { useEffect } from 'react';
 export default function CommentsSection() {
   useEffect(() => {
     // Load Giscus script
-    const script = document.createElement('script');
-    script.src = 'https://giscus.app/client.js';
-    script.setAttribute('data-repo', 'junweizhang23/junweizhang23.github.io');
-    script.setAttribute('data-repo-id', 'R_kgDOK3HNFQ');
-    script.setAttribute('data-category', 'General');
-    script.setAttribute('data-category-id', 'DIC_kwDOK3HNFc4CjwcN');
-    script.setAttribute('data-mapping', 'pathname');
-    script.setAttribute('data-strict', '0');
-    script.setAttribute('data-reactions-enabled', '1');
-    script.setAttribute('data-emit-metadata', '0');
-    script.setAttribute('data-input-position', 'top');
-    script.setAttribute('data-theme', 'preferred_color_scheme');
-    script.setAttribute('data-lang', 'en');
-    script.setAttribute('crossorigin', 'anonymous');
-    script.async = true;
+    // To get the correct repo-id and category-id:
+    // 1. Visit https://giscus.app
+    // 2. Enter your repository: junweizhang23/junweizhang23.github.io
+    // 3. Select category (usually "General" or "Announcements")
+    // 4. Copy the repo-id and category-id from the generated script
+    const loadGiscus = () => {
+      try {
+        const script = document.createElement('script');
+        script.src = 'https://giscus.app/client.js';
+        script.setAttribute('data-repo', 'junweizhang23/junweizhang23.github.io');
+        script.setAttribute('data-repo-id', 'R_kgDOL0PDHg');
+        script.setAttribute('data-category', 'General');
+        script.setAttribute('data-category-id', 'DIC_kwDOL0PDHs4C0gva');
+        script.setAttribute('data-mapping', 'pathname');
+        script.setAttribute('data-strict', '0');
+        script.setAttribute('data-reactions-enabled', '1');
+        script.setAttribute('data-emit-metadata', '0');
+        script.setAttribute('data-input-position', 'bottom');
+        script.setAttribute('data-theme', 'preferred_color_scheme');
+        script.setAttribute('data-lang', 'en');
+        script.setAttribute('crossorigin', 'anonymous');
+        script.async = true;
 
-    const commentsContainer = document.getElementById('giscus-container');
-    if (commentsContainer) {
-      commentsContainer.appendChild(script);
-    }
+        const commentsContainer = document.getElementById('giscus-container');
+        if (commentsContainer && !commentsContainer.querySelector('script[src="https://giscus.app/client.js"]')) {
+          commentsContainer.appendChild(script);
+        }
+      } catch (error) {
+        console.log('Giscus setup error:', error);
+      }
+    };
+
+    // Delay loading to ensure DOM is ready
+    const timer = setTimeout(loadGiscus, 1000);
 
     return () => {
-      // Cleanup
+      clearTimeout(timer);
       const existingScript = document.querySelector('script[src="https://giscus.app/client.js"]');
       if (existingScript) {
         existingScript.remove();

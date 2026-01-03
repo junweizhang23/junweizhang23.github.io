@@ -61,7 +61,7 @@ export default function ContactSection() {
             <h4 className="font-semibold text-slate-900 dark:text-white mb-3">🐦 Social</h4>
             <div className="space-y-2">
               <a 
-                href="https://twitter.com/junweizhang" 
+                href="https://x.com/JDI_LINK" 
                 className="block text-sky-600 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300 font-medium"
                 target="_blank"
                 rel="noopener noreferrer"
