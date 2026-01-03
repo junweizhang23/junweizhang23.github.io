@@ -3,7 +3,6 @@
 import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header';
 import HeroSection from './components/sections/HeroSection';
-import ExperienceSection from './components/sections/ExperienceSection';
 import ResearchSection from './components/sections/ResearchSection';
 import LeadershipSection from './components/sections/LeadershipSection';
 import ContentSection from './components/sections/ContentSection';
@@ -25,7 +24,6 @@ export default function Home() {
           {/* Main Content Area */}
           <main className="lg:col-span-3">
             <HeroSection />
-            <ExperienceSection />
             <ResearchSection />
             <LeadershipSection />
             <ContentSection />
