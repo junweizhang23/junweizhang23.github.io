@@ -1,86 +1,147 @@
+'use client';
+
+interface Experience {
+  company: string;
+  role: string;
+  period: string;
+  description: string;
+  tags: string[];
+  color: string;
+  icon: string;
+  location?: string;
+}
+
 export default function ExperienceSection() {
+  const experiences: Experience[] = [
+    {
+      company: 'Meta',
+      role: 'Smart Glass GenAI Multi-Modal Systems',
+      period: '2024 - Present',
+      description: 'Working on cutting-edge smart glass technology and infrastructure, developing GenAI multi-modal glass models for next-generation AR experiences.',
+      tags: ['Smart Glass', 'GenAI', 'Multi-Modal AI'],
+      color: 'blue',
+      icon: 'M',
+      location: 'Current Position'
+    },
+    {
+      company: 'DoorDash',
+      role: 'Tech Lead',
+      period: '2022 - 2024',
+      description: 'Led technology initiatives and engineering teams, driving innovation in large-scale distributed systems and smart technology applications.',
+      tags: ['Tech Leadership', 'Distributed Systems'],
+      color: 'orange',
+      icon: 'D'
+    },
+    {
+      company: 'Microsoft Azure',
+      role: 'Software Engineer',
+      period: '2020 - 2022',
+      description: 'Contributed to cloud computing infrastructure and Azure services, working on large-scale distributed systems and cloud technologies.',
+      tags: ['Cloud Computing', 'Azure'],
+      color: 'blue',
+      icon: 'M'
+    },
+    {
+      company: 'Uber',
+      role: 'Software Engineer',
+      period: '2018 - 2020',
+      description: 'Worked across multiple offices developing high-performance systems for ride-sharing and logistics platforms at global scale.',
+      tags: ['High Performance', 'Logistics'],
+      color: 'slate',
+      icon: 'U',
+      location: 'Palo Alto & Seattle'
+    }
+  ];
+
+  const getColorClasses = (color: string) => {
+    const colors: Record<string, { bg: string; text: string; border: string; tag: string }> = {
+      blue: {
+        bg: 'bg-blue-50 dark:bg-blue-900/20',
+        text: 'text-blue-600 dark:text-blue-400',
+        border: 'border-blue-200 dark:border-blue-700',
+        tag: 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
+      },
+      orange: {
+        bg: 'bg-orange-50 dark:bg-orange-900/20',
+        text: 'text-orange-600 dark:text-orange-400',
+        border: 'border-orange-200 dark:border-orange-700',
+        tag: 'bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200'
+      },
+      slate: {
+        bg: 'bg-slate-50 dark:bg-slate-800',
+        text: 'text-slate-600 dark:text-slate-400',
+        border: 'border-slate-200 dark:border-slate-700',
+        tag: 'bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200'
+      }
+    };
+    return colors[color] || colors.slate;
+  };
+
   return (
     <section id="experience" className="mb-16">
       <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
         Professional Experience
       </h3>
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-lg border border-blue-200 dark:border-blue-700">
-          <div className="flex items-center mb-4">
-            <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
-              <span className="text-white font-bold text-lg">M</span>
-            </div>
-            <div>
-              <h4 className="text-xl font-semibold text-slate-900 dark:text-white">Meta</h4>
-              <p className="text-blue-600 dark:text-blue-400 font-medium">Current Position</p>
-            </div>
-          </div>
-          <p className="text-slate-700 dark:text-slate-300 mb-3">
-            <strong>Smart Glass GenAI Multi-Modal Systems</strong><br/>
-            Working on cutting-edge smart glass technology and infrastructure, developing GenAI multi-modal glass models for next-generation AR experiences.
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Smart Glass</span>
-            <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">GenAI</span>
-            <span className="bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 px-2 py-1 rounded text-xs">Multi-Modal AI</span>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-lg border border-slate-200 dark:border-slate-700">
-          <div className="flex items-center mb-4">
-            <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mr-4">
-              <span className="text-white font-bold text-lg">D</span>
-            </div>
-            <div>
-              <h4 className="text-xl font-semibold text-slate-900 dark:text-white">DoorDash</h4>
-              <p className="text-orange-600 dark:text-orange-400 font-medium">Tech Lead</p>
-            </div>
-          </div>
-          <p className="text-slate-700 dark:text-slate-300 mb-3">
-            Led technology initiatives and engineering teams, driving innovation in large-scale distributed systems and smart technology applications.
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <span className="bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded text-xs">Tech Leadership</span>
-            <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded text-xs">Distributed Systems</span>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-lg border border-slate-200 dark:border-slate-700">
-          <div className="flex items-center mb-4">
-            <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
-              <span className="text-white font-bold text-lg">M</span>
-            </div>
-            <div>
-              <h4 className="text-xl font-semibold text-slate-900 dark:text-white">Microsoft Azure</h4>
-              <p className="text-blue-600 dark:text-blue-400 font-medium">Software Engineer</p>
-            </div>
-          </div>
-          <p className="text-slate-700 dark:text-slate-300 mb-3">
-            Contributed to cloud computing infrastructure and Azure services, working on large-scale distributed systems and cloud technologies.
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded text-xs">Cloud Computing</span>
-            <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded text-xs">Azure</span>
-          </div>
-        </div>
-
-        <div className="bg-white dark:bg-slate-800 p-6 rounded-lg border border-slate-200 dark:border-slate-700">
-          <div className="flex items-center mb-4">
-            <div className="w-12 h-12 bg-black dark:bg-slate-600 rounded-lg flex items-center justify-center mr-4">
-              <span className="text-white font-bold text-lg">U</span>
-            </div>
-            <div>
-              <h4 className="text-xl font-semibold text-slate-900 dark:text-white">Uber</h4>
-              <p className="text-slate-600 dark:text-slate-400 font-medium">Software Engineer • Palo Alto & Seattle</p>
-            </div>
-          </div>
-          <p className="text-slate-700 dark:text-slate-300 mb-3">
-            Worked across multiple offices developing high-performance systems for ride-sharing and logistics platforms at global scale.
-          </p>
-          <div className="flex flex-wrap gap-2">
-            <span className="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 px-2 py-1 rounded text-xs">High Performance</span>
-            <span className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded text-xs">Logistics</span>
-          </div>
+      
+      {/* Timeline Visualization */}
+      <div className="relative max-w-4xl mx-auto">
+        {/* Timeline Line */}
+        <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 via-purple-400 to-orange-400 dark:from-blue-600 dark:via-purple-600 dark:to-orange-600 hidden md:block"></div>
+        
+        <div className="space-y-8">
+          {experiences.map((exp, index) => {
+            const colors = getColorClasses(exp.color);
+            return (
+              <div 
+                key={index}
+                className="relative flex items-start gap-6 group hover:scale-[1.02] transition-transform duration-300"
+              >
+                {/* Timeline Dot */}
+                <div className="relative z-10 flex-shrink-0">
+                  <div className={`w-16 h-16 ${colors.bg} ${colors.border} border-2 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow`}>
+                    <span className={`${colors.text} font-bold text-xl`}>{exp.icon}</span>
+                  </div>
+                  {/* Animated pulse effect */}
+                  <div className={`absolute inset-0 ${colors.bg} rounded-lg animate-ping opacity-20`}></div>
+                </div>
+                
+                {/* Content Card */}
+                <div className={`flex-1 ${colors.bg} ${colors.border} border rounded-lg p-6 shadow-sm group-hover:shadow-md transition-shadow`}>
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                    <div>
+                      <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-1">
+                        {exp.company}
+                      </h4>
+                      <p className={`${colors.text} font-medium`}>
+                        {exp.role}
+                        {exp.location && ` • ${exp.location}`}
+                      </p>
+                    </div>
+                    <div className="mt-2 md:mt-0">
+                      <span className="text-sm text-slate-500 dark:text-slate-400 font-medium">
+                        {exp.period}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">
+                    {exp.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {exp.tags.map((tag, tagIndex) => (
+                      <span 
+                        key={tagIndex}
+                        className={`${colors.tag} px-2 py-1 rounded text-xs font-medium`}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

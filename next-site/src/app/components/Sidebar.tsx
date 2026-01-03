@@ -1,6 +1,50 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import VisitorAnalytics from './VisitorAnalytics';
 
+interface ScholarMetrics {
+  citations: number;
+  hIndex: number;
+  i10Index: number;
+  publications: number;
+  lastUpdated?: string;
+}
+
 export default function Sidebar() {
+  const [metrics, setMetrics] = useState<ScholarMetrics>({
+    citations: 152,
+    hIndex: 6,
+    i10Index: 3,
+    publications: 10,
+  });
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Load metrics from scholar-metadata.json
+    const loadMetrics = async () => {
+      try {
+        const response = await fetch('/scholar-metadata.json');
+        if (response.ok) {
+          const data = await response.json();
+          setMetrics({
+            citations: data.citations || 152,
+            hIndex: data.hIndex || 6,
+            i10Index: data.i10Index || 3,
+            publications: data.publications || 10,
+            lastUpdated: data.lastUpdated,
+          });
+        }
+      } catch (error) {
+        console.log('Could not load scholar metrics, using defaults:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadMetrics();
+  }, []);
+
   return (
     <aside className="lg:col-span-1 space-y-8">
       {/* Visitor Analytics */}
@@ -36,15 +80,21 @@ export default function Sidebar() {
         <div className="space-y-3">
           <div className="flex justify-between items-center">
             <span className="text-slate-600 dark:text-slate-300">Publications</span>
-            <span className="font-semibold text-slate-900 dark:text-white">10+</span>
+            <span className="font-semibold text-slate-900 dark:text-white">
+              {isLoading ? '---' : `${metrics.publications}+`}
+            </span>
           </div>
           <div className="flex justify-between items-center">
             <span className="text-slate-600 dark:text-slate-300">Citations</span>
-            <span className="font-semibold text-slate-900 dark:text-white">152</span>
+            <span className="font-semibold text-slate-900 dark:text-white">
+              {isLoading ? '---' : metrics.citations.toLocaleString()}
+            </span>
           </div>
           <div className="flex justify-between items-center">
             <span className="text-slate-600 dark:text-slate-300">h-index</span>
-            <span className="font-semibold text-slate-900 dark:text-white">6</span>
+            <span className="font-semibold text-slate-900 dark:text-white">
+              {isLoading ? '---' : metrics.hIndex}
+            </span>
           </div>
           <div className="flex justify-between items-center">
             <span className="text-slate-600 dark:text-slate-300">Editorial Roles</span>

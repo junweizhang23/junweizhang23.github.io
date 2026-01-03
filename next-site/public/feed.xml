@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dr. Junwei Zhang - Academic &amp; Professional Updates</title>
+    <link>https://junweizhang23.github.io</link>
+    <description>Latest updates, publications, and activities from Dr. Junwei Zhang - Meta Smart Glass GenAI Engineer, IEEE T-CSVT Associate Editor, Stanford CS Master</description>
+    <language>en-US</language>
+    <managingEditor>junwei.zhang@stonybrook.edu (Dr. Junwei Zhang)</managingEditor>
+    <webMaster>junwei.zhang@stonybrook.edu (Dr. Junwei Zhang)</webMaster>
+    <lastBuildDate>Sat, 03 Jan 2026 02:51:32 GMT</lastBuildDate>
+    <pubDate>Sat, 03 Jan 2026 02:51:32 GMT</pubDate>
+    <ttl>60</ttl>
+    <atom:link href="https://junweizhang23.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title><![CDATA[New Publication in IEEE T-CSVT]]></title>
+      <link>https://junweizhang23.github.io/#publications</link>
+      <description><![CDATA[Our latest research on smart glass multi-modal systems has been accepted for publication.]]></description>
+      <pubDate>Thu, 02 Jan 2025 00:00:00 GMT</pubDate>
+      <guid isPermaLink="false">2025-01-02-paper</guid>
+      <category>paper</category>
+    </item>
+    <item>
+      <title><![CDATA[New YouTube Video: GenAI Smart Glass Systems]]></title>
+      <link>https://www.youtube.com/@junweizhang</link>
+      <description><![CDATA[Deep dive into the technical architecture of next-generation smart glass interfaces.]]></description>
+      <pubDate>Sat, 28 Dec 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="false">2024-12-28-youtube</guid>
+      <category>youtube</category>
+    </item>
+    <item>
+      <title><![CDATA[IEEE Senior Member Achievement]]></title>
+      <link>https://twitter.com/junweizhang</link>
+      <description><![CDATA[Honored to be recognized as IEEE Senior Member for contributions to the engineering field.]]></description>
+      <pubDate>Fri, 20 Dec 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="false">2024-12-20-twitter</guid>
+      <category>twitter</category>
+    </item>
+    <item>
+      <title><![CDATA[Bilibili中文讲解：多模态AI系统]]></title>
+      <link>https://www.bilibili.com/video/BV1QfoGYgERZ/</link>
+      <description><![CDATA[在B站分享了最新的多模态AI系统研究成果和技术解析。]]></description>
+      <pubDate>Sun, 15 Dec 2024 00:00:00 GMT</pubDate>
+      <guid isPermaLink="false">2024-12-15-bilibili</guid>
+      <category>bilibili</category>
+    </item>
+  </channel>
+</rss>

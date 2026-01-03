@@ -5,12 +5,13 @@
   "description": "Personal academic website for Junwei Zhang showcasing research and publications",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "npm run generate-rss && next build",
     "start": "next start",
     "lint": "next lint",
     "export": "next build && next export",
     "update-scholar": "node scripts/update-scholar-metrics.js",
-    "update-and-build": "npm run update-scholar && npm run build"
+    "generate-rss": "node scripts/generate-rss.js",
+    "update-and-build": "npm run update-scholar && npm run generate-rss && npm run build"
   },
   "dependencies": {
     "react": "^19.0.0",

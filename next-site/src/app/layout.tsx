@@ -61,6 +61,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* RSS Feed */}
+        <link 
+          rel="alternate" 
+          type="application/rss+xml" 
+          title="Dr. Junwei Zhang - RSS Feed" 
+          href="/feed.xml"
+        />
+        
         {/* Academic Icons for Google Scholar */}
         <link 
           rel="stylesheet" 
@@ -108,15 +116,12 @@ export default function RootLayout({
         */}
         
         {/* Plausible Analytics - Privacy-friendly alternative */}
-        {/* Uncomment and replace 'junweizhang23.github.io' with your domain when ready */}
-        {/*
         <Script
           defer
           data-domain="junweizhang23.github.io"
           src="https://plausible.io/js/script.js"
           strategy="afterInteractive"
         />
-        */}
         
         {/* Structured Data for SEO */}
         <script

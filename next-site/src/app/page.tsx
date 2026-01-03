@@ -1,3 +1,6 @@
+'use client';
+
+import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header';
 import HeroSection from './components/sections/HeroSection';
 import ExperienceSection from './components/sections/ExperienceSection';
@@ -13,8 +16,9 @@ import Footer from './components/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
-      <Header />
+    <LanguageProvider>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+        <Header />
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 py-12">
@@ -36,7 +40,8 @@ export default function Home() {
         </div>
       </div>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }
