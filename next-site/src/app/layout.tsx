@@ -75,9 +75,6 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
         />
         
-        {/* Visitor Analytics */}
-        <script async src="https://api.countapi.xyz/hit/junweizhang23.github.io/visits" />
-        
         {/* Google Analytics 4 - Replace G-XXXXXXXXXX with your GA4 Measurement ID */}
         {/* Uncomment and configure when you have your GA4 ID */}
         {/*

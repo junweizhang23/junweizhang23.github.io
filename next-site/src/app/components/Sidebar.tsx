@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import VisitorAnalytics from './VisitorAnalytics';
 
 interface ScholarMetrics {
   citations: number;
@@ -47,9 +46,6 @@ export default function Sidebar() {
 
   return (
     <aside className="lg:col-span-1 space-y-8">
-      {/* Visitor Analytics */}
-      <VisitorAnalytics />
-
       {/* Quick Stats */}
       <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
         <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
