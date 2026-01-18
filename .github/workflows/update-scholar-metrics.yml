@@ -84,7 +84,7 @@ jobs:
       - name: Run Scholar metrics update
         working-directory: next-site
         env:
-          AUTO_COMMIT: 'true'
+          AUTO_COMMIT: 'false'
           CI: 'true'
         run: node scripts/update-scholar-metrics.js
         

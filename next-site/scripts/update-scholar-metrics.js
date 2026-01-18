@@ -48,7 +48,7 @@ async function loadExistingMetrics() {
  */
 async function fetchScholarMetricsWithPuppeteer() {
   console.log('🌐 Using Puppeteer to fetch Google Scholar metrics...');
-  
+
   const browser = await puppeteer.launch({
     headless: true,
     args: [
@@ -64,31 +64,31 @@ async function fetchScholarMetricsWithPuppeteer() {
 
   try {
     const page = await browser.newPage();
-    
+
     // Set a reasonable viewport size
     await page.setViewport({ width: 1920, height: 1080 });
-    
+
     // Set user agent to avoid detection
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
-    
+
     console.log('📡 Navigating to Google Scholar...');
     await page.goto(SCHOLAR_URL, {
       waitUntil: 'networkidle2',
       timeout: 30000
     });
-    
+
     // Wait for the metrics to load (Google Scholar uses specific class names)
     console.log('⏳ Waiting for page content to load...');
     await page.waitForSelector('.gsc_rsb_std, .gsc_a_c, [id*="gsc_rsb"]', { timeout: 10000 }).catch(() => {
       console.log('⚠️ Metrics selectors not found, continuing anyway...');
     });
-    
+
     // Wait a bit more for any dynamic content (using setTimeout instead of waitForTimeout)
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     // Extract metrics from the page
     console.log('🔍 Extracting metrics from page...');
-    
+
     const metrics = await page.evaluate(() => {
       const result = {
         citations: null,
@@ -96,7 +96,7 @@ async function fetchScholarMetricsWithPuppeteer() {
         i10Index: null,
         publications: null
       };
-      
+
       // Try to find citations (multiple possible locations)
       const citationsSelectors = [
         '.gsc_rsb_std:contains("Cited by")',
@@ -104,26 +104,26 @@ async function fetchScholarMetricsWithPuppeteer() {
         '.gsc_a_c',
         'td.gsc_rsb_std'
       ];
-      
+
       // Look for "Cited by" text and get the number
       const allText = document.body.innerText || document.body.textContent || '';
       const citedByMatch = allText.match(/Cited by[^\d]*(\d+)/i);
       if (citedByMatch) {
         result.citations = parseInt(citedByMatch[1]);
       }
-      
+
       // Look for h-index
       const hIndexMatch = allText.match(/h-index[^\d]*(\d+)/i);
       if (hIndexMatch) {
         result.hIndex = parseInt(hIndexMatch[1]);
       }
-      
+
       // Look for i10-index
       const i10Match = allText.match(/i10-index[^\d]*(\d+)/i);
       if (i10Match) {
         result.i10Index = parseInt(i10Match[1]);
       }
-      
+
       // Try to find metrics in table cells
       const tableCells = Array.from(document.querySelectorAll('td.gsc_rsb_std'));
       tableCells.forEach((cell, index) => {
@@ -147,18 +147,18 @@ async function fetchScholarMetricsWithPuppeteer() {
           }
         }
       });
-      
+
       // Try to get publication count
       const pubElements = document.querySelectorAll('.gsc_a_tr, .gsc_a_t');
       if (pubElements.length > 0) {
         result.publications = pubElements.length;
       }
-      
+
       return result;
     });
-    
+
     console.log('📊 Extracted metrics:', metrics);
-    
+
     // Validate and return
     if (metrics.citations !== null || metrics.hIndex !== null || metrics.i10Index !== null) {
       return {
@@ -170,7 +170,7 @@ async function fetchScholarMetricsWithPuppeteer() {
         profileUrl: SCHOLAR_URL
       };
     }
-    
+
     return null;
   } finally {
     await browser.close();
@@ -183,24 +183,24 @@ async function fetchScholarMetricsWithPuppeteer() {
  */
 async function fetchScholarMetricsWithHTTP() {
   console.log('📡 Using HTTP method to fetch Google Scholar metrics...');
-  
+
   try {
     // Load existing metrics as fallback
     const fallbackMetrics = await loadExistingMetrics();
-    
+
     let metrics = {
       citations: fallbackMetrics.citations,
       hIndex: fallbackMetrics.hIndex,
       i10Index: fallbackMetrics.i10Index,
       publications: fallbackMetrics.publications || 10
     };
-    
+
     // Attempt to fetch real data using HTTP request with proper headers
     try {
       const https = require('https');
       const url = require('url');
       const parsedUrl = url.parse(SCHOLAR_URL);
-      
+
       const options = {
         hostname: parsedUrl.hostname,
         path: parsedUrl.path,
@@ -224,7 +224,7 @@ async function fetchScholarMetricsWithHTTP() {
             // For now, just log and continue - Google Scholar usually doesn't redirect
             // If needed, we can implement proper redirect following later
           }
-          
+
           let data = '';
           res.on('data', chunk => data += chunk);
           res.on('end', () => {
@@ -235,7 +235,7 @@ async function fetchScholarMetricsWithHTTP() {
             }
           });
         });
-        
+
         req.on('error', reject);
         req.setTimeout(15000, () => {
           req.destroy();
@@ -262,7 +262,7 @@ async function fetchScholarMetricsWithHTTP() {
         /gsc_rsb_std[^>]*>(\d+)[^<]*Cited by/i,
         /class="gsc_rsb_std"[^>]*>(\d+)/i,
       ];
-      
+
       const hIndexPatterns = [
         /h-index[^<]*<[^>]*>(\d+)/i,
         /"h_index":\s*(\d+)/i,
@@ -271,7 +271,7 @@ async function fetchScholarMetricsWithHTTP() {
         /gsc_rsb_std[^>]*>(\d+)[^<]*h-index/i,
         /class="gsc_rsb_std"[^>]*>(\d+)/i,
       ];
-      
+
       const i10IndexPatterns = [
         /i10-index[^<]*<[^>]*>(\d+)/i,
         /"i10_index":\s*(\d+)/i,
@@ -328,7 +328,7 @@ async function fetchScholarMetricsWithHTTP() {
 
       // Check if we successfully extracted any new data
       const hasNewData = foundCitations || foundHIndex || foundI10Index;
-      
+
       if (hasNewData) {
         console.log('✅ Successfully fetched and parsed real metrics:', {
           citations: metrics.citations,
@@ -347,7 +347,7 @@ async function fetchScholarMetricsWithHTTP() {
       } else {
         console.warn('⚠️ Could not extract metrics from response');
         console.log('🔍 Trying to find any numeric patterns in response...');
-        
+
         // Debug: Look for any numbers near "cited" or "h-index" keywords
         const citedMatches = response.match(/[Cc]ited[^0-9]*(\d+)/gi);
         const hIndexMatches = response.match(/h[-\s]*index[^0-9]*(\d+)/gi);
@@ -357,7 +357,7 @@ async function fetchScholarMetricsWithHTTP() {
         if (hIndexMatches) {
           console.log('🔍 Found "h-index" patterns:', hIndexMatches.slice(0, 5));
         }
-        
+
         // Save a sample of the response for debugging
         if (process.env.DEBUG_HTML === 'true' || process.argv.includes('--debug')) {
           const debugPath = path.join(__dirname, '../debug-scholar-response.html');
@@ -366,7 +366,7 @@ async function fetchScholarMetricsWithHTTP() {
           console.log('💡 You can inspect this file to see the actual HTML structure');
         }
       }
-      
+
       return null;
     } catch (fetchError) {
       console.warn('⚠️ Failed to fetch live data from Google Scholar:', fetchError.message);
@@ -385,13 +385,14 @@ async function fetchScholarMetricsWithHTTP() {
 async function fetchScholarMetrics() {
   try {
     console.log('📊 Fetching Google Scholar metrics from:', SCHOLAR_URL);
-    
+
     // Load existing metrics as fallback (not hardcoded!)
     const fallbackMetrics = await loadExistingMetrics();
-    
+
     let metrics = {
       ...fallbackMetrics,
-      lastUpdated: new Date().toISOString(),
+      // Keep existing timestamp by default (only update if we successfully fetch new data)
+      lastUpdated: fallbackMetrics.lastUpdated || new Date().toISOString(),
       profileUrl: SCHOLAR_URL
     };
 
@@ -414,9 +415,9 @@ async function fetchScholarMetrics() {
     // Try HTTP method as fallback
     try {
       const httpMetrics = await fetchScholarMetricsWithHTTP();
-      if (httpMetrics && (httpMetrics.citations !== fallbackMetrics.citations || 
-                          httpMetrics.hIndex !== fallbackMetrics.hIndex ||
-                          httpMetrics.i10Index !== fallbackMetrics.i10Index)) {
+      if (httpMetrics && (httpMetrics.citations !== fallbackMetrics.citations ||
+        httpMetrics.hIndex !== fallbackMetrics.hIndex ||
+        httpMetrics.i10Index !== fallbackMetrics.i10Index)) {
         console.log('✅ Successfully fetched metrics using HTTP!');
         return httpMetrics;
       }
@@ -428,14 +429,15 @@ async function fetchScholarMetrics() {
     console.log('📂 Using existing metrics from file as fallback');
     console.log('📊 Fallback metrics:', metrics);
     return metrics;
-    
+
   } catch (error) {
     console.error('❌ Error fetching Scholar metrics:', error);
     // Return fallback instead of throwing
     const fallback = await loadExistingMetrics();
     return {
       ...fallback,
-      lastUpdated: new Date().toISOString(),
+      // Keep existing timestamp on error
+      lastUpdated: fallback.lastUpdated || new Date().toISOString(),
       profileUrl: SCHOLAR_URL
     };
   }
@@ -448,11 +450,11 @@ async function fetchScholarMetrics() {
 async function updateMetricsFile(metrics) {
   try {
     const metadataPath = path.join(__dirname, '../public/scholar-metadata.json');
+    // Don't force update the timestamp here - rely on the fetcher to set it if data is fresh
     const updatedMetrics = {
-      ...metrics,
-      lastUpdated: new Date().toISOString()
+      ...metrics
     };
-    
+
     await fs.writeFile(metadataPath, JSON.stringify(updatedMetrics, null, 2), 'utf8');
     console.log('✅ Updated metadata file:', metadataPath);
     console.log('📊 Metrics saved:', {
@@ -473,11 +475,11 @@ async function updateMetricsFile(metrics) {
  */
 async function commitChanges(metrics) {
   const { execSync } = require('child_process');
-  
+
   try {
     // Check if there are changes
     const status = execSync('git status --porcelain', { encoding: 'utf8' });
-    
+
     if (status.trim()) {
       execSync('git add .');
       execSync(`git commit -m "chore: auto-update Google Scholar metrics
@@ -488,7 +490,7 @@ i10-index: ${metrics.i10Index}
 Publications: ${metrics.publications}+
 
 Last updated: ${new Date().toLocaleDateString()}"`);
-      
+
       console.log('✅ Committed changes to git');
       return true;
     } else {
@@ -508,18 +510,19 @@ async function main() {
   try {
     console.log('🚀 Starting Google Scholar metrics update...');
     console.log('📅 Date:', new Date().toISOString());
-    
+
     const metrics = await fetchScholarMetrics();
     await updateMetricsFile(metrics);
-    
-    // Only commit if we're in a git repository and have changes
-    if (process.env.CI || process.env.AUTO_COMMIT === 'true') {
+
+    // Only commit if AUTO_COMMIT is true and we're NOT in GitHub Actions (which handles it separately)
+    // Or if we specifically want the script to handle it
+    if (process.env.AUTO_COMMIT === 'true' && process.env.GITHUB_ACTIONS !== 'true') {
       await commitChanges(metrics);
     }
-    
+
     console.log('🎉 Successfully updated Google Scholar metrics!');
     console.log(`📊 Final metrics: Citations: ${metrics.citations}, h-index: ${metrics.hIndex}, i10-index: ${metrics.i10Index}`);
-    
+
   } catch (error) {
     console.error('💥 Failed to update metrics:', error);
     process.exit(1);
