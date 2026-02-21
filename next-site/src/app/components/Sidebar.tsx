@@ -12,7 +12,7 @@ interface ScholarMetrics {
 
 export default function Sidebar() {
   const [metrics, setMetrics] = useState<ScholarMetrics>({
-    citations: 152,
+    citations: 155,
     hIndex: 6,
     i10Index: 3,
     publications: 10,
@@ -27,7 +27,7 @@ export default function Sidebar() {
         if (response.ok) {
           const data = await response.json();
           setMetrics({
-            citations: data.citations || 152,
+            citations: data.citations || 155,
             hIndex: data.hIndex || 6,
             i10Index: data.i10Index || 3,
             publications: data.publications || 10,
@@ -110,6 +110,7 @@ export default function Sidebar() {
               <div className="text-slate-500 dark:text-slate-400">Current</div>
             </div>
           </div>
+          {/* HIDDEN: Stanford CS Master - uncomment when admission is confirmed
           <div className="flex items-start gap-3">
             <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
             <div>
@@ -117,6 +118,7 @@ export default function Sidebar() {
               <div className="text-slate-500 dark:text-slate-400">In Progress</div>
             </div>
           </div>
+          */}
           <div className="flex items-start gap-3">
             <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
             <div>

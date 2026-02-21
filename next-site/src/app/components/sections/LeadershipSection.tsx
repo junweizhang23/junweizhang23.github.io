@@ -86,6 +86,7 @@ export default function LeadershipSection() {
           </div>
         </div>
 
+        {/* HIDDEN: Stanford CS Master Program card - uncomment when admission is confirmed
         <div className="bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 p-6 rounded-lg border-2 border-red-200 dark:border-red-700">
           <div className="flex items-center mb-4">
             <span className="text-3xl mr-3">🎓</span>
@@ -122,6 +123,7 @@ export default function LeadershipSection() {
             </a>
           </div>
         </div>
+        */}
       </div>
     </section>
   );

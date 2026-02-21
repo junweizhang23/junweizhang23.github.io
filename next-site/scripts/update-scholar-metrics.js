@@ -2,6 +2,11 @@
  * Google Scholar Metrics Updater
  * Fetches metrics from Google Scholar and updates the website automatically
  * Uses Puppeteer for reliable data extraction from JavaScript-rendered pages
+ * 
+ * IMPORTANT: Google Scholar displays metrics in a table with two columns:
+ *   - "All" (all-time metrics) — this is what we want
+ *   - "Since 2021" (recent metrics)
+ * The script must extract the "All" column values, NOT the "Since 2021" column.
  */
 
 const fs = require('fs').promises;
@@ -44,7 +49,15 @@ async function loadExistingMetrics() {
 
 /**
  * Fetches Google Scholar metrics using Puppeteer (browser automation)
- * This is the preferred method as it handles JavaScript-rendered content
+ * This is the preferred method as it handles JavaScript-rendered content.
+ * 
+ * Google Scholar metrics table structure:
+ *   Row 0: Citations  | <all-time value> | <since-2021 value>
+ *   Row 1: h-index    | <all-time value> | <since-2021 value>
+ *   Row 2: i10-index  | <all-time value> | <since-2021 value>
+ * 
+ * We need the FIRST numeric column (index 0 of gsc_rsb_std cells per row),
+ * which corresponds to the "All" column.
  */
 async function fetchScholarMetricsWithPuppeteer() {
   console.log('🌐 Using Puppeteer to fetch Google Scholar metrics...');
@@ -77,13 +90,13 @@ async function fetchScholarMetricsWithPuppeteer() {
       timeout: 30000
     });
 
-    // Wait for the metrics to load (Google Scholar uses specific class names)
+    // Wait for the metrics table to load
     console.log('⏳ Waiting for page content to load...');
-    await page.waitForSelector('.gsc_rsb_std, .gsc_a_c, [id*="gsc_rsb"]', { timeout: 10000 }).catch(() => {
-      console.log('⚠️ Metrics selectors not found, continuing anyway...');
+    await page.waitForSelector('td.gsc_rsb_std', { timeout: 10000 }).catch(() => {
+      console.log('⚠️ Metrics table cells not found, continuing anyway...');
     });
 
-    // Wait a bit more for any dynamic content (using setTimeout instead of waitForTimeout)
+    // Wait a bit more for any dynamic content
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     // Extract metrics from the page
@@ -97,59 +110,53 @@ async function fetchScholarMetricsWithPuppeteer() {
         publications: null
       };
 
-      // Try to find citations (multiple possible locations)
-      const citationsSelectors = [
-        '.gsc_rsb_std:contains("Cited by")',
-        '[id*="gsc_rsb"] td:contains("Cited by")',
-        '.gsc_a_c',
-        'td.gsc_rsb_std'
-      ];
+      // Google Scholar metrics table has rows with class gsc_rsb_std cells.
+      // The table structure is:
+      //   <tr> <td>Citations</td> <td class="gsc_rsb_std">ALL_VALUE</td> <td class="gsc_rsb_std">SINCE_VALUE</td> </tr>
+      //   <tr> <td>h-index</td>   <td class="gsc_rsb_std">ALL_VALUE</td> <td class="gsc_rsb_std">SINCE_VALUE</td> </tr>
+      //   <tr> <td>i10-index</td> <td class="gsc_rsb_std">ALL_VALUE</td> <td class="gsc_rsb_std">SINCE_VALUE</td> </tr>
+      //
+      // We want the FIRST gsc_rsb_std in each row (the "All" column).
 
-      // Look for "Cited by" text and get the number
-      const allText = document.body.innerText || document.body.textContent || '';
-      const citedByMatch = allText.match(/Cited by[^\d]*(\d+)/i);
-      if (citedByMatch) {
-        result.citations = parseInt(citedByMatch[1]);
-      }
-
-      // Look for h-index
-      const hIndexMatch = allText.match(/h-index[^\d]*(\d+)/i);
-      if (hIndexMatch) {
-        result.hIndex = parseInt(hIndexMatch[1]);
-      }
-
-      // Look for i10-index
-      const i10Match = allText.match(/i10-index[^\d]*(\d+)/i);
-      if (i10Match) {
-        result.i10Index = parseInt(i10Match[1]);
-      }
-
-      // Try to find metrics in table cells
-      const tableCells = Array.from(document.querySelectorAll('td.gsc_rsb_std'));
-      tableCells.forEach((cell, index) => {
-        const text = cell.textContent || '';
-        const value = parseInt(text.trim());
-        if (!isNaN(value) && value > 0) {
-          // Check the label in previous cells or row
-          const row = cell.closest('tr');
-          if (row) {
-            const labelCell = row.querySelector('td:first-child');
-            if (labelCell) {
-              const label = labelCell.textContent || '';
-              if (label.includes('Cited by') || label.includes('Citations')) {
-                result.citations = value;
-              } else if (label.includes('h-index')) {
-                result.hIndex = value;
-              } else if (label.includes('i10-index')) {
-                result.i10Index = value;
-              }
+      const rows = document.querySelectorAll('#gsc_rsb_st tr');
+      rows.forEach((row) => {
+        const headerCell = row.querySelector('td.gsc_rsb_sc1');
+        const valueCells = row.querySelectorAll('td.gsc_rsb_std');
+        
+        if (headerCell && valueCells.length >= 1) {
+          const label = (headerCell.textContent || '').trim().toLowerCase();
+          // First gsc_rsb_std cell = "All" column
+          const allTimeValue = parseInt((valueCells[0].textContent || '').trim());
+          
+          if (!isNaN(allTimeValue)) {
+            if (label.includes('citation')) {
+              result.citations = allTimeValue;
+            } else if (label.includes('h-index')) {
+              result.hIndex = allTimeValue;
+            } else if (label.includes('i10-index')) {
+              result.i10Index = allTimeValue;
             }
           }
         }
       });
 
+      // Fallback: if the table selector approach didn't work, try generic approach
+      if (result.citations === null && result.hIndex === null) {
+        const allCells = Array.from(document.querySelectorAll('td.gsc_rsb_std'));
+        // Cells appear in order: citations-all, citations-since, hindex-all, hindex-since, i10-all, i10-since
+        if (allCells.length >= 6) {
+          const citAll = parseInt((allCells[0].textContent || '').trim());
+          const hAll = parseInt((allCells[2].textContent || '').trim());
+          const i10All = parseInt((allCells[4].textContent || '').trim());
+          
+          if (!isNaN(citAll)) result.citations = citAll;
+          if (!isNaN(hAll)) result.hIndex = hAll;
+          if (!isNaN(i10All)) result.i10Index = i10All;
+        }
+      }
+
       // Try to get publication count
-      const pubElements = document.querySelectorAll('.gsc_a_tr, .gsc_a_t');
+      const pubElements = document.querySelectorAll('.gsc_a_tr');
       if (pubElements.length > 0) {
         result.publications = pubElements.length;
       }
@@ -179,7 +186,11 @@ async function fetchScholarMetricsWithPuppeteer() {
 
 /**
  * Fetches Google Scholar metrics using HTTP request (fallback method)
- * This is used when Puppeteer is not available or fails
+ * This is used when Puppeteer is not available or fails.
+ * 
+ * NOTE: The HTTP method parses raw HTML. Google Scholar's metrics table
+ * has cells in order: All-time value first, then Since-YYYY value.
+ * The regex patterns below attempt to extract the "All" column values.
  */
 async function fetchScholarMetricsWithHTTP() {
   console.log('📡 Using HTTP method to fetch Google Scholar metrics...');
@@ -209,7 +220,7 @@ async function fetchScholarMetricsWithHTTP() {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
           'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
           'Accept-Language': 'en-US,en;q=0.9',
-          'Accept-Encoding': 'gzip, deflate, br',
+          'Accept-Encoding': 'identity',
           'Connection': 'keep-alive',
           'Upgrade-Insecure-Requests': '1',
         }
@@ -217,18 +228,10 @@ async function fetchScholarMetricsWithHTTP() {
 
       const response = await new Promise((resolve, reject) => {
         const req = https.request(options, (res) => {
-          // Handle redirects (max 1 redirect to avoid loops)
-          if (res.statusCode === 301 || res.statusCode === 302) {
-            const redirectUrl = res.headers.location;
-            console.log(`🔄 Redirect detected to: ${redirectUrl}`);
-            // For now, just log and continue - Google Scholar usually doesn't redirect
-            // If needed, we can implement proper redirect following later
-          }
-
           let data = '';
           res.on('data', chunk => data += chunk);
           res.on('end', () => {
-            if (res.statusCode === 200 || res.statusCode === 301 || res.statusCode === 302) {
+            if (res.statusCode === 200) {
               resolve(data);
             } else {
               reject(new Error(`HTTP ${res.statusCode}: ${res.statusMessage}`));
@@ -244,98 +247,46 @@ async function fetchScholarMetricsWithHTTP() {
         req.end();
       });
 
-      // Debug: Check response length and content type
       console.log(`📄 Response length: ${response.length} characters`);
-      if (response.length < 1000) {
-        console.warn('⚠️ Response seems too short, might be an error page');
-        console.log('📄 First 500 chars:', response.substring(0, 500));
+
+      // Parse the metrics table from HTML
+      // The table has rows like:
+      //   <td class="gsc_rsb_sc1"><a ...>Citations</a></td>
+      //   <td class="gsc_rsb_std">155</td>   <!-- All -->
+      //   <td class="gsc_rsb_std">100</td>   <!-- Since 2021 -->
+      //
+      // Strategy: find all gsc_rsb_std values and take every other one (index 0, 2, 4 = All column)
+      const stdPattern = /class="gsc_rsb_std"[^>]*>(\d+)<\/td>/g;
+      const allValues = [];
+      let match;
+      while ((match = stdPattern.exec(response)) !== null) {
+        allValues.push(parseInt(match[1]));
       }
 
-      // Enhanced regex patterns to extract metrics from HTML
-      // Google Scholar uses various formats, so we try multiple patterns
-      const citationsPatterns = [
-        /Cited by[^\d]*(\d+)/i,
-        /"cited_by_count":\s*(\d+)/i,
-        /Citations[^<]*<[^>]*>(\d+)/i,
-        /<td[^>]*>Cited by<\/td>\s*<td[^>]*>(\d+)/i,
-        /gsc_a_c[^>]*>(\d+)[^<]*Cited by/i,
-        /gsc_rsb_std[^>]*>(\d+)[^<]*Cited by/i,
-        /class="gsc_rsb_std"[^>]*>(\d+)/i,
-      ];
+      console.log('🔍 All gsc_rsb_std values found:', allValues);
 
-      const hIndexPatterns = [
-        /h-index[^<]*<[^>]*>(\d+)/i,
-        /"h_index":\s*(\d+)/i,
-        /h-index<\/td><td[^>]*>(\d+)/i,
-        /<td[^>]*>h-index<\/td>\s*<td[^>]*>(\d+)/i,
-        /gsc_rsb_std[^>]*>(\d+)[^<]*h-index/i,
-        /class="gsc_rsb_std"[^>]*>(\d+)/i,
-      ];
-
-      const i10IndexPatterns = [
-        /i10-index[^<]*<[^>]*>(\d+)/i,
-        /"i10_index":\s*(\d+)/i,
-        /i10-index<\/td><td[^>]*>(\d+)/i,
-        /<td[^>]*>i10-index<\/td>\s*<td[^>]*>(\d+)/i,
-        /gsc_rsb_std[^>]*>(\d+)[^<]*i10-index/i,
-      ];
-
-      let foundCitations = false;
-      let foundHIndex = false;
-      let foundI10Index = false;
-
-      // Try to extract citations
-      for (const pattern of citationsPatterns) {
-        const match = response.match(pattern);
-        if (match) {
-          const value = parseInt(match[1]);
-          if (!isNaN(value) && value > 0) {
-            metrics.citations = value;
-            console.log(`✅ Found citations: ${metrics.citations} (pattern: ${pattern})`);
-            foundCitations = true;
-            break;
-          }
-        }
-      }
-
-      // Try to extract h-index
-      for (const pattern of hIndexPatterns) {
-        const match = response.match(pattern);
-        if (match) {
-          const value = parseInt(match[1]);
-          if (!isNaN(value) && value >= 0) {
-            metrics.hIndex = value;
-            console.log(`✅ Found h-index: ${metrics.hIndex} (pattern: ${pattern})`);
-            foundHIndex = true;
-            break;
-          }
-        }
-      }
-
-      // Try to extract i10-index
-      for (const pattern of i10IndexPatterns) {
-        const match = response.match(pattern);
-        if (match) {
-          const value = parseInt(match[1]);
-          if (!isNaN(value) && value >= 0) {
-            metrics.i10Index = value;
-            console.log(`✅ Found i10-index: ${metrics.i10Index} (pattern: ${pattern})`);
-            foundI10Index = true;
-            break;
-          }
-        }
-      }
-
-      // Check if we successfully extracted any new data
-      const hasNewData = foundCitations || foundHIndex || foundI10Index;
-
-      if (hasNewData) {
-        console.log('✅ Successfully fetched and parsed real metrics:', {
+      if (allValues.length >= 6) {
+        // Values are in order: citations-all, citations-since, hindex-all, hindex-since, i10-all, i10-since
+        metrics.citations = allValues[0];
+        metrics.hIndex = allValues[2];
+        metrics.i10Index = allValues[4];
+        
+        console.log(`✅ Extracted ALL-TIME metrics: citations=${metrics.citations}, h-index=${metrics.hIndex}, i10-index=${metrics.i10Index}`);
+        
+        return {
           citations: metrics.citations,
           hIndex: metrics.hIndex,
           i10Index: metrics.i10Index,
-          found: { citations: foundCitations, hIndex: foundHIndex, i10Index: foundI10Index }
-        });
+          publications: metrics.publications || 10,
+          lastUpdated: new Date().toISOString(),
+          profileUrl: SCHOLAR_URL
+        };
+      } else if (allValues.length >= 2) {
+        // Partial data - take what we can, but be cautious
+        console.warn('⚠️ Found fewer values than expected, using cautiously');
+        metrics.citations = allValues[0];
+        if (allValues.length >= 4) metrics.hIndex = allValues[2];
+        
         return {
           citations: metrics.citations,
           hIndex: metrics.hIndex,
@@ -346,24 +297,12 @@ async function fetchScholarMetricsWithHTTP() {
         };
       } else {
         console.warn('⚠️ Could not extract metrics from response');
-        console.log('🔍 Trying to find any numeric patterns in response...');
-
-        // Debug: Look for any numbers near "cited" or "h-index" keywords
-        const citedMatches = response.match(/[Cc]ited[^0-9]*(\d+)/gi);
-        const hIndexMatches = response.match(/h[-\s]*index[^0-9]*(\d+)/gi);
-        if (citedMatches) {
-          console.log('🔍 Found "cited" patterns:', citedMatches.slice(0, 5));
-        }
-        if (hIndexMatches) {
-          console.log('🔍 Found "h-index" patterns:', hIndexMatches.slice(0, 5));
-        }
 
         // Save a sample of the response for debugging
         if (process.env.DEBUG_HTML === 'true' || process.argv.includes('--debug')) {
           const debugPath = path.join(__dirname, '../debug-scholar-response.html');
           await fs.writeFile(debugPath, response, 'utf8');
           console.log('💾 Saved full response to:', debugPath);
-          console.log('💡 You can inspect this file to see the actual HTML structure');
         }
       }
 
@@ -391,7 +330,6 @@ async function fetchScholarMetrics() {
 
     let metrics = {
       ...fallbackMetrics,
-      // Keep existing timestamp by default (only update if we successfully fetch new data)
       lastUpdated: fallbackMetrics.lastUpdated || new Date().toISOString(),
       profileUrl: SCHOLAR_URL
     };
@@ -415,9 +353,7 @@ async function fetchScholarMetrics() {
     // Try HTTP method as fallback
     try {
       const httpMetrics = await fetchScholarMetricsWithHTTP();
-      if (httpMetrics && (httpMetrics.citations !== fallbackMetrics.citations ||
-        httpMetrics.hIndex !== fallbackMetrics.hIndex ||
-        httpMetrics.i10Index !== fallbackMetrics.i10Index)) {
+      if (httpMetrics && (httpMetrics.citations > 0 || httpMetrics.hIndex > 0)) {
         console.log('✅ Successfully fetched metrics using HTTP!');
         return httpMetrics;
       }
@@ -432,11 +368,9 @@ async function fetchScholarMetrics() {
 
   } catch (error) {
     console.error('❌ Error fetching Scholar metrics:', error);
-    // Return fallback instead of throwing
     const fallback = await loadExistingMetrics();
     return {
       ...fallback,
-      // Keep existing timestamp on error
       lastUpdated: fallback.lastUpdated || new Date().toISOString(),
       profileUrl: SCHOLAR_URL
     };
@@ -444,19 +378,27 @@ async function fetchScholarMetrics() {
 }
 
 /**
- * Updates the metadata JSON file with new metrics
- * The React components read from this file, so no need to update components directly
+ * Updates the metadata JSON files with new metrics
+ * Updates both public/scholar-metadata.json (for Next.js) and root scholar-metadata.json (for deployed site)
  */
 async function updateMetricsFile(metrics) {
   try {
-    const metadataPath = path.join(__dirname, '../public/scholar-metadata.json');
-    // Don't force update the timestamp here - rely on the fetcher to set it if data is fresh
-    const updatedMetrics = {
-      ...metrics
-    };
+    const publicPath = path.join(__dirname, '../public/scholar-metadata.json');
+    const rootPath = path.join(__dirname, '../../scholar-metadata.json');
+    
+    const updatedMetrics = { ...metrics };
 
-    await fs.writeFile(metadataPath, JSON.stringify(updatedMetrics, null, 2), 'utf8');
-    console.log('✅ Updated metadata file:', metadataPath);
+    await fs.writeFile(publicPath, JSON.stringify(updatedMetrics, null, 2), 'utf8');
+    console.log('✅ Updated public metadata file:', publicPath);
+    
+    // Also update root-level copy
+    try {
+      await fs.writeFile(rootPath, JSON.stringify(updatedMetrics, null, 2), 'utf8');
+      console.log('✅ Updated root metadata file:', rootPath);
+    } catch (rootError) {
+      console.warn('⚠️ Could not update root metadata file:', rootError.message);
+    }
+    
     console.log('📊 Metrics saved:', {
       citations: updatedMetrics.citations,
       hIndex: updatedMetrics.hIndex,
@@ -466,39 +408,6 @@ async function updateMetricsFile(metrics) {
     });
   } catch (error) {
     console.error('❌ Error updating metadata file:', error);
-    throw error;
-  }
-}
-
-/**
- * Creates a commit with the updated metrics
- */
-async function commitChanges(metrics) {
-  const { execSync } = require('child_process');
-
-  try {
-    // Check if there are changes
-    const status = execSync('git status --porcelain', { encoding: 'utf8' });
-
-    if (status.trim()) {
-      execSync('git add .');
-      execSync(`git commit -m "chore: auto-update Google Scholar metrics
-      
-Citations: ${metrics.citations}
-h-index: ${metrics.hIndex}
-i10-index: ${metrics.i10Index}
-Publications: ${metrics.publications}+
-
-Last updated: ${new Date().toLocaleDateString()}"`);
-
-      console.log('✅ Committed changes to git');
-      return true;
-    } else {
-      console.log('ℹ️ No changes to commit');
-      return false;
-    }
-  } catch (error) {
-    console.error('❌ Error committing changes:', error);
     throw error;
   }
 }
@@ -514,12 +423,6 @@ async function main() {
     const metrics = await fetchScholarMetrics();
     await updateMetricsFile(metrics);
 
-    // Only commit if AUTO_COMMIT is true and we're NOT in GitHub Actions (which handles it separately)
-    // Or if we specifically want the script to handle it
-    if (process.env.AUTO_COMMIT === 'true' && process.env.GITHUB_ACTIONS !== 'true') {
-      await commitChanges(metrics);
-    }
-
     console.log('🎉 Successfully updated Google Scholar metrics!');
     console.log(`📊 Final metrics: Citations: ${metrics.citations}, h-index: ${metrics.hIndex}, i10-index: ${metrics.i10Index}`);
 
@@ -534,4 +437,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { fetchScholarMetrics, updateMetricsFile, loadExistingMetrics, main }; 
+module.exports = { fetchScholarMetrics, updateMetricsFile, loadExistingMetrics, main };

@@ -7,7 +7,7 @@ export default function ContactSection() {
       <div className="bg-stone-50/80 dark:bg-slate-800 p-8 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700 max-w-4xl mx-auto">
         <p className="text-slate-600 dark:text-slate-300 mb-8">
           Currently working at Meta on smart glass GenAI multi-modal systems. As an IEEE Senior Member, 
-          IEEE T-CSVT Associate Editor, TGO tech leader, and Stanford CS master program participant, I welcome 
+          IEEE T-CSVT Associate Editor, and TGO tech leader, I welcome 
           opportunities for academic collaboration, industry partnerships, editorial discussions, and knowledge 
           sharing on cutting-edge AI and AR technology topics.
         </p>
@@ -45,6 +45,7 @@ export default function ContactSection() {
                 <i className="ai ai-google-scholar"></i>
                 Google Scholar
               </a>
+              {/* HIDDEN: ORCID link - replace 0000-0000-0000-0000 with actual ORCID ID before enabling
               <a 
                 href="https://orcid.org/0000-0000-0000-0000" 
                 className="flex items-center justify-center gap-1 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
@@ -54,6 +55,7 @@ export default function ContactSection() {
                 <i className="ai ai-orcid"></i>
                 ORCID
               </a>
+              */}
             </div>
           </div>
           
@@ -104,8 +106,8 @@ export default function ContactSection() {
         
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 rounded-lg">
           <p className="text-sm text-slate-600 dark:text-slate-300">
-            <strong>Open to:</strong> Smart glass GenAI collaborations • Editorial opportunities • Tech leadership discussions • 
-            Meta Reality Labs partnerships • Multi-modal AI research • Academic speaking engagements • AR/VR innovation projects
+            <strong>Open to:</strong> Smart glass GenAI collaborations &bull; Editorial opportunities &bull; Tech leadership discussions &bull; 
+            Meta Reality Labs partnerships &bull; Multi-modal AI research &bull; Academic speaking engagements &bull; AR/VR innovation projects
           </p>
         </div>
       </div>

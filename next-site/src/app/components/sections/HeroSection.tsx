@@ -24,15 +24,19 @@ export default function HeroSection() {
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
               🚀 TGO Elite Tech Leader
             </span>
+            {/* HIDDEN: Stanford CS Master badge - uncomment when admission is confirmed
             <span className="bg-gradient-to-r from-red-600 to-red-700 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
               🎓 Stanford CS Master
             </span>
+            */}
           </div>
           
           <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
             Currently working at <strong className="text-blue-600 dark:text-blue-400">Meta</strong> on cutting-edge <strong>smart glass GenAI multi-modal systems</strong>. 
-            Ph.D. from <a href="https://www.stonybrook.edu/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Stony Brook University</a>, 
-            currently enrolled in <a href="https://cs.stanford.edu/degrees/mscs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Stanford&apos;s CS Master Program</a>. 
+            Ph.D. from <a href="https://www.stonybrook.edu/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Stony Brook University</a>. 
+            {/* HIDDEN: Stanford enrollment - uncomment when admission is confirmed
+            Currently enrolled in <a href="https://cs.stanford.edu/degrees/mscs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Stanford&apos;s CS Master Program</a>. 
+            */}
             Previous industry experience at <strong>DoorDash</strong>, <strong>Microsoft Azure</strong>, and <strong>Uber</strong>.
           </p>
           <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">

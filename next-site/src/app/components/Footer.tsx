@@ -6,10 +6,12 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Dr. Junwei Zhang</h4>
             <p className="text-sm text-slate-600 dark:text-slate-400">
-              Meta • Smart Glass GenAI Multi-Modal Systems<br/>
+              Meta &bull; Smart Glass GenAI Multi-Modal Systems<br/>
               IEEE T-CSVT Associate Editor<br/>
-              TGO Elite Tech Leader<br/>
-              Stanford CS Master Program
+              TGO Elite Tech Leader
+              {/* HIDDEN: Stanford - uncomment when admission is confirmed
+              <br/>Stanford CS Master Program
+              */}
             </p>
           </div>
           <div>
@@ -41,7 +43,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-slate-200 dark:border-slate-700 pt-8 text-center">
           <p className="text-slate-600 dark:text-slate-400 text-sm">
-            © 2025 Dr. Junwei Zhang. Meta • IEEE Associate Editor • TGO Tech Leader • Stanford CS Master
+            &copy; {new Date().getFullYear()} Dr. Junwei Zhang. Meta &bull; IEEE Associate Editor &bull; TGO Tech Leader
           </p>
         </div>
       </div>

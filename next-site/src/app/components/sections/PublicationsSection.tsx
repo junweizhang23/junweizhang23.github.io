@@ -10,7 +10,7 @@ export default function PublicationsSection() {
             Area-preserving mesh parameterization for poly-annulus surfaces based on optimal mass transportation
           </h4>
           <p className="text-blue-600 dark:text-blue-400 mb-2">
-            Computer Aided Geometric Design, 2016 · Cited by 62
+            Computer Aided Geometric Design, 2016 &middot; Cited by 59
           </p>
           <p className="text-slate-600 dark:text-slate-300 mb-4">
             K Su, L Cui, K Qian, N Lei, J Zhang, M Zhang, XD Gu - A novel approach to mesh parameterization using optimal mass transportation theory.
@@ -19,8 +19,10 @@ export default function PublicationsSection() {
             <a href="https://drive.google.com/file/d/1KbYDlDd96Q8urhNlwDun5_yURABOMZFH/view?usp=sharing" 
                target="_blank" rel="noopener noreferrer"
                className="citation-link text-blue-600 dark:text-blue-400 text-sm hover:underline">PDF</a>
+            {/* TODO: Add actual BibTeX and DOI links
             <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">BibTeX</a>
             <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">DOI</a>
+            */}
           </div>
         </div>
         <div className="bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
@@ -28,7 +30,7 @@ export default function PublicationsSection() {
             Volume preserving mesh parameterization based on optimal mass transportation
           </h4>
           <p className="text-blue-600 dark:text-blue-400 mb-2">
-            Computer-Aided Design, 2017 · Cited by 46
+            Computer-Aided Design, 2017 &middot; Cited by 47
           </p>
           <p className="text-slate-600 dark:text-slate-300 mb-4">
             K Su, W Chen, N Lei, J Zhang, K Qian, X Gu - Advanced techniques for volume-preserving mesh parameterization using transportation theory.
@@ -37,8 +39,6 @@ export default function PublicationsSection() {
             <a href="https://drive.google.com/file/d/1Jmfwtsdgnh8JgM3tEcz6QlUZF30d-T1o/view?usp=sharing" 
                target="_blank" rel="noopener noreferrer"
                className="citation-link text-blue-600 dark:text-blue-400 text-sm hover:underline">PDF</a>
-            <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">BibTeX</a>
-            <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">DOI</a>
           </div>
         </div>
         <div className="bg-stone-50/80 dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-stone-200/50 dark:border-slate-700">
@@ -46,7 +46,7 @@ export default function PublicationsSection() {
             Coflow Scheduling in Data Centers: Routing and Bandwidth Allocation
           </h4>
           <p className="text-blue-600 dark:text-blue-400 mb-2">
-            IEEE Transactions on Parallel and Distributed Systems, 2021 · Cited by 22
+            IEEE Transactions on Parallel and Distributed Systems, 2021 &middot; Cited by 23
           </p>
           <p className="text-slate-600 dark:text-slate-300 mb-4">
             TG Shi, Li and Liu, Yang and Zhang, Junwei and Robertazzi - Optimization techniques for data center network performance and resource allocation.
@@ -55,8 +55,6 @@ export default function PublicationsSection() {
             <a href="https://drive.google.com/file/d/1X4zaNWwazyJcqGZWfixwguQL65zqEocO/view?usp=sharing" 
                target="_blank" rel="noopener noreferrer"
                className="citation-link text-blue-600 dark:text-blue-400 text-sm hover:underline">PDF</a>
-            <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">BibTeX</a>
-            <a href="#" className="citation-link text-blue-600 dark:text-blue-400 text-sm">DOI</a>
           </div>
         </div>
       </div>

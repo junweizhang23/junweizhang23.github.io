@@ -14,19 +14,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Junwei Zhang - Meta Smart Glass Engineer | IEEE Associate Editor | Stanford AI",
-  description: "Dr. Junwei Zhang - Meta Smart Glass GenAI Multi-Modal Systems Engineer, IEEE T-CSVT Associate Editor, TGO Elite Tech Leader, Stanford CS Master Program. Pioneering smart glass technology, computer vision, and AI research with 155+ citations.",
+  title: "Dr. Junwei Zhang - Meta Smart Glass Engineer | IEEE Associate Editor",
+  description: "Dr. Junwei Zhang - Meta Smart Glass GenAI Multi-Modal Systems Engineer, IEEE T-CSVT Associate Editor, IEEE Senior Member, TGO Elite Tech Leader. Pioneering smart glass technology, computer vision, and AI research with 155+ citations.",
   authors: [{ name: "Dr. Junwei Zhang" }],
   keywords: [
     "Junwei Zhang", "Meta smart glass", "GenAI multi-modal", "IEEE T-CSVT", "Associate Editor", 
-    "Stanford AI", "computer vision", "smart glass technology", "multi-modal AI", "TGO", "鲲鹏会",
+    "computer vision", "smart glass technology", "multi-modal AI", "TGO", "鲲鹏会",
     "academic research", "publications", "h-index", "citations", "AR VR", "computational geometry",
     "parallel computing", "3D computer vision", "mesh parameterization", "optimal transport",
     "YouTube AI content", "Bilibili", "DoorDash", "Microsoft Azure", "Uber", "Stony Brook"
   ],
   openGraph: {
     title: "Dr. Junwei Zhang - Meta Smart Glass Engineer | IEEE Associate Editor",
-    description: "Meta Smart Glass GenAI Multi-Modal Systems Engineer, IEEE T-CSVT Associate Editor, TGO Elite Tech Leader, Stanford CS Master Program",
+    description: "Meta Smart Glass GenAI Multi-Modal Systems Engineer, IEEE T-CSVT Associate Editor, IEEE Senior Member, TGO Elite Tech Leader",
     url: "https://junweizhang23.github.io",
     siteName: "Dr. Junwei Zhang - Academic & Professional Profile",
     type: "website",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Dr. Junwei Zhang - Meta Smart Glass Engineer | IEEE Associate Editor",
-    description: "Meta Smart Glass GenAI Engineer, IEEE T-CSVT Associate Editor, Stanford CS Master",
+    description: "Meta Smart Glass GenAI Engineer, IEEE T-CSVT Associate Editor, IEEE Senior Member",
   },
   robots: {
     index: true,
@@ -48,9 +48,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  /* HIDDEN: Add your actual Google Site Verification code here
   verification: {
-    google: "google-site-verification-code-here",
+    google: "your-actual-verification-code",
   },
+  */
 };
 
 export default function RootLayout({
@@ -76,8 +78,7 @@ export default function RootLayout({
         />
         
         {/* Google Analytics 4 - Replace G-XXXXXXXXXX with your GA4 Measurement ID */}
-        {/* Uncomment and configure when you have your GA4 ID */}
-        {/*
+        {/* Uncomment and configure when you have your GA4 ID
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
           strategy="afterInteractive"
@@ -120,12 +121,14 @@ export default function RootLayout({
                   "@type": "CollegeOrUniversity", 
                   "name": "Stony Brook University",
                   "degree": "Ph.D."
-                },
-                {
+                }
+                /* HIDDEN: Stanford - uncomment when admission is confirmed
+                ,{
                   "@type": "CollegeOrUniversity",
                   "name": "Stanford University", 
                   "degree": "Master of Science in Computer Science"
                 }
+                */
               ],
               "memberOf": [
                 {
@@ -156,7 +159,7 @@ export default function RootLayout({
                 "3D Computer Vision",
                 "AR/VR Technology"
               ],
-              "description": "Meta Smart Glass GenAI Multi-Modal Systems Engineer, IEEE T-CSVT Associate Editor, TGO Elite Tech Leader, Stanford CS Master Program. Pioneering smart glass technology and AI research with 155+ citations."
+              "description": "Meta Smart Glass GenAI Multi-Modal Systems Engineer, IEEE T-CSVT Associate Editor, IEEE Senior Member, TGO Elite Tech Leader. Pioneering smart glass technology and AI research with 155+ citations."
             })
           }}
         />
