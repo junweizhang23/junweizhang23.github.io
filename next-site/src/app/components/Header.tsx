@@ -5,56 +5,55 @@ import { useLanguage } from '../contexts/LanguageContext';
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
 
+  const navLinks = [
+    { href: '#about', label: t('nav.about') },
+    { href: '#research', label: t('nav.research') },
+    { href: '#leadership', label: t('nav.leadership') },
+    { href: '#publications', label: t('nav.publications') },
+    { href: '#contact', label: t('nav.contact') },
+  ];
+
   return (
-    <header className="border-b border-stone-200/50 dark:border-slate-700 bg-stone-50/90 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-10">
-      <nav className="max-w-6xl mx-auto px-6 py-4">
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">
-            {language === 'zh' ? '张俊伟' : 'Junwei Zhang'}
-          </h1>
-          <div className="flex items-center gap-6">
-            <div className="flex gap-6">
-              <a href="#about" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
-                {t('nav.about')}
-              </a>
-              <a href="#leadership" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
-                {t('nav.leadership')}
-              </a>
-              <a href="#experience" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
-                {t('nav.experience')}
-              </a>
-              <a href="#research" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
-                {t('nav.research')}
-              </a>
-              <a href="#publications" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
-                {t('nav.publications')}
-              </a>
-              <a href="#contact" className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white transition-colors">
-                {t('nav.contact')}
-              </a>
-            </div>
-            <div className="flex gap-2 border-l border-slate-300 dark:border-slate-600 pl-6">
-              <button
-                onClick={() => setLanguage('en')}
-                className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
-                  language === 'en'
-                    ? 'bg-blue-600 text-white'
-                    : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
-                }`}
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b" style={{ borderColor: 'var(--color-separator)' }}>
+      <nav className="max-w-content mx-auto px-6 h-14 flex items-center justify-between">
+        <a href="#" className="text-base font-semibold text-apple-text-primary tracking-tight">
+          {language === 'zh' ? '张俊伟' : 'Junwei Zhang'}
+        </a>
+
+        <div className="flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="px-3 py-1.5 text-caption text-apple-text-secondary hover:text-apple-text-primary rounded-apple-sm hover:bg-apple-bg-grouped transition-all duration-150"
               >
-                EN
-              </button>
-              <button
-                onClick={() => setLanguage('zh')}
-                className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
-                  language === 'zh'
-                    ? 'bg-blue-600 text-white'
-                    : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
-                }`}
-              >
-                中文
-              </button>
-            </div>
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-1 ml-3 pl-3 border-l" style={{ borderColor: 'var(--color-separator)' }}>
+            <button
+              onClick={() => setLanguage('en')}
+              className={`px-2.5 py-1 rounded-apple-sm text-caption font-medium transition-all duration-150 ${
+                language === 'en'
+                  ? 'bg-apple-text-primary text-white'
+                  : 'text-apple-text-tertiary hover:text-apple-text-primary hover:bg-apple-bg-grouped'
+              }`}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLanguage('zh')}
+              className={`px-2.5 py-1 rounded-apple-sm text-caption font-medium transition-all duration-150 ${
+                language === 'zh'
+                  ? 'bg-apple-text-primary text-white'
+                  : 'text-apple-text-tertiary hover:text-apple-text-primary hover:bg-apple-bg-grouped'
+              }`}
+            >
+              中文
+            </button>
           </div>
         </div>
       </nav>

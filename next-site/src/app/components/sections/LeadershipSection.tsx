@@ -1,129 +1,66 @@
+const roles = [
+  {
+    title: 'IEEE T-CSVT Associate Editor',
+    description: 'Associate Editor for IEEE Transactions on Circuits and Systems for Video Technology, one of the top journals in video processing and multimedia systems.',
+    details: [
+      { label: 'Impact Factor', value: '8.4' },
+      { label: 'CiteScore', value: '13.8' },
+      { label: 'Journal Rank', value: 'Top Tier' },
+    ],
+  },
+  {
+    title: 'IEEE Senior Member',
+    description: 'Senior Member of the Institute of Electrical and Electronics Engineers, recognizing significant contributions to the engineering profession.',
+    details: [
+      { label: 'Organization', value: 'IEEE' },
+      { label: 'Grade', value: 'Senior Member' },
+      { label: 'Recognition', value: 'Professional Achievement' },
+    ],
+  },
+  {
+    title: 'TGO Elite Tech Leader',
+    description: 'Member of TGO (鲲鹏会), the premier technology leadership community connecting 1700+ CTOs, CPOs, and Tech VPs globally.',
+    details: [
+      { label: 'Community', value: '鲲鹏会' },
+      { label: 'Members', value: '1700+ Leaders' },
+      { label: 'Selection', value: 'Invitation Only' },
+    ],
+  },
+];
+
 export default function LeadershipSection() {
   return (
-    <section id="leadership" className="mb-16">
-      <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
-        Academic Leadership & Global Communities
-      </h3>
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-6 rounded-lg border-2 border-purple-200 dark:border-purple-700">
-          <div className="flex items-center mb-4">
-            <span className="text-3xl mr-3">🎖️</span>
-            <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
-              IEEE Senior Member
-            </h4>
-          </div>
-          <p className="text-slate-700 dark:text-slate-300 mb-4">
-            Senior Member of the Institute of Electrical and Electronics Engineers, 
-            recognizing significant contributions to the engineering profession.
-          </p>
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between">
-              <span className="text-slate-600 dark:text-slate-400">Organization:</span>
-              <span className="font-semibold text-purple-700 dark:text-purple-300">IEEE</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-slate-600 dark:text-slate-400">Grade:</span>
-              <span className="font-semibold text-purple-700 dark:text-purple-300">Senior Member</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-slate-600 dark:text-slate-400">Recognition:</span>
-              <span className="font-semibold text-purple-700 dark:text-purple-300">Professional Achievement</span>
-            </div>
-          </div>
-        </div>
+    <section id="leadership" className="py-16">
+      <h2 className="text-title-1 font-bold text-apple-text-primary mb-2 text-center">
+        Leadership & Community
+      </h2>
+      <p className="text-body text-apple-text-secondary text-center mb-10 max-w-lg mx-auto">
+        Academic editorial roles and global technology leadership.
+      </p>
 
-        <div className="bg-gradient-to-br from-yellow-50 to-amber-50 dark:from-yellow-900/20 dark:to-amber-900/20 p-6 rounded-lg border-2 border-yellow-200 dark:border-yellow-700">
-          <div className="flex items-center mb-4">
-            <span className="text-3xl mr-3">🏆</span>
-            <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
-              IEEE T-CSVT Associate Editor
-            </h4>
-          </div>
-          <p className="text-slate-700 dark:text-slate-300 mb-4">
-            Associate Editor for IEEE Transactions on Circuits and Systems for Video Technology, 
-            one of the top journals in video processing and multimedia systems.
-          </p>
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between">
-              <span className="text-slate-600 dark:text-slate-400">Impact Factor:</span>
-              <span className="font-semibold text-yellow-700 dark:text-yellow-300">8.4</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-slate-600 dark:text-slate-400">CiteScore:</span>
-              <span className="font-semibold text-yellow-700 dark:text-yellow-300">13.8</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-slate-600 dark:text-slate-400">Journal Rank:</span>
-              <span className="font-semibold text-yellow-700 dark:text-yellow-300">Top Tier</span>
+      <div className="grid md:grid-cols-3 gap-4">
+        {roles.map((role) => (
+          <div
+            key={role.title}
+            className="card-hover p-6 rounded-apple-lg border bg-apple-bg-tertiary"
+            style={{ borderColor: 'var(--color-border)' }}
+          >
+            <h3 className="text-title-3 text-apple-text-primary mb-2">
+              {role.title}
+            </h3>
+            <p className="text-body text-apple-text-secondary leading-relaxed mb-5">
+              {role.description}
+            </p>
+            <div className="space-y-2.5 pt-4 border-t" style={{ borderColor: 'var(--color-separator)' }}>
+              {role.details.map((detail) => (
+                <div key={detail.label} className="flex justify-between items-baseline">
+                  <span className="text-caption text-apple-text-tertiary">{detail.label}</span>
+                  <span className="text-caption font-semibold text-apple-text-primary">{detail.value}</span>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-
-        <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-6 rounded-lg border-2 border-blue-200 dark:border-blue-700">
-          <div className="flex items-center mb-4">
-            <span className="text-3xl mr-3">🚀</span>
-            <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
-              TGO Elite Tech Leader
-            </h4>
-          </div>
-          <p className="text-slate-700 dark:text-slate-300 mb-4">
-            Member of TGO (鲲鹏会), the premier technology leadership community connecting 
-            1700+ CTOs, CPOs, and Tech VPs globally.
-          </p>
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between">
-              <span className="text-slate-600 dark:text-slate-400">Community:</span>
-              <span className="font-semibold text-blue-700 dark:text-blue-300">鲲鹏会</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-slate-600 dark:text-slate-400">Members:</span>
-              <span className="font-semibold text-blue-700 dark:text-blue-300">1700+ Leaders</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-slate-600 dark:text-slate-400">Selection:</span>
-              <span className="font-semibold text-blue-700 dark:text-blue-300">Invitation Only</span>
-            </div>
-          </div>
-        </div>
-
-        {/* HIDDEN: Stanford CS Master Program card - uncomment when admission is confirmed
-        <div className="bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 p-6 rounded-lg border-2 border-red-200 dark:border-red-700">
-          <div className="flex items-center mb-4">
-            <span className="text-3xl mr-3">🎓</span>
-            <h4 className="text-xl font-semibold text-slate-900 dark:text-white">
-              Stanford CS Master Program
-            </h4>
-          </div>
-          <p className="text-slate-700 dark:text-slate-300 mb-4">
-            Currently enrolled in Stanford&apos;s prestigious Computer Science Master Program, 
-            advancing expertise in cutting-edge AI and computer systems research.
-          </p>
-          <div className="space-y-2 text-sm">
-            <div className="flex justify-between">
-              <span className="text-slate-600 dark:text-slate-400">Institution:</span>
-              <span className="font-semibold text-red-700 dark:text-red-300">Stanford University</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-slate-600 dark:text-slate-400">Program:</span>
-              <span className="font-semibold text-red-700 dark:text-red-300">CS Master (MSCS)</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-slate-600 dark:text-slate-400">Status:</span>
-              <span className="font-semibold text-red-700 dark:text-red-300">In Progress</span>
-            </div>
-          </div>
-          <div className="mt-4">
-            <a 
-              href="https://cs.stanford.edu/degrees/mscs/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 text-sm font-medium"
-            >
-              🔗 Program Details
-            </a>
-          </div>
-        </div>
-        */}
+        ))}
       </div>
     </section>
   );

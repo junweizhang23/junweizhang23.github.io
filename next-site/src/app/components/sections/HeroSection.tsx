@@ -1,82 +1,119 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+interface ScholarMetrics {
+  citations: number;
+  hIndex: number;
+  i10Index: number;
+  publications: number;
+}
 
 export default function HeroSection() {
   const [imageError, setImageError] = useState(false);
+  const [metrics, setMetrics] = useState<ScholarMetrics>({
+    citations: 155, hIndex: 6, i10Index: 3, publications: 10,
+  });
+
+  useEffect(() => {
+    const loadMetrics = async () => {
+      try {
+        const response = await fetch('/scholar-metadata.json');
+        if (response.ok) {
+          const data = await response.json();
+          setMetrics({
+            citations: data.citations || 155,
+            hIndex: data.hIndex || 6,
+            i10Index: data.i10Index || 3,
+            publications: data.publications || 10,
+          });
+        }
+      } catch { /* use defaults */ }
+    };
+    loadMetrics();
+  }, []);
 
   return (
-    <section id="about" className="mb-16">
-      <div className="grid md:grid-cols-3 gap-8 items-center">
-        <div className="md:col-span-2">
-          <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-            Dr. Junwei Zhang
-          </h2>
-          
-          {/* Prestigious Roles */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            <span className="bg-gradient-to-r from-yellow-500 to-amber-500 text-black px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
-              🏆 IEEE T-CSVT Associate Editor
-            </span>
-            <span className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
-              🎖️ IEEE Senior Member
-            </span>
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
-              🚀 TGO Elite Tech Leader
-            </span>
-            {/* HIDDEN: Stanford CS Master badge - uncomment when admission is confirmed
-            <span className="bg-gradient-to-r from-red-600 to-red-700 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
-              🎓 Stanford CS Master
-            </span>
-            */}
-          </div>
-          
-          <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-            Currently working at <strong className="text-blue-600 dark:text-blue-400">Meta</strong> on cutting-edge <strong>smart glass GenAI multi-modal systems</strong>. 
-            Ph.D. from <a href="https://www.stonybrook.edu/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Stony Brook University</a>. 
-            {/* HIDDEN: Stanford enrollment - uncomment when admission is confirmed
-            Currently enrolled in <a href="https://cs.stanford.edu/degrees/mscs/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">Stanford&apos;s CS Master Program</a>. 
-            */}
-            Previous industry experience at <strong>DoorDash</strong>, <strong>Microsoft Azure</strong>, and <strong>Uber</strong>.
-          </p>
-          <p className="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-            Research focus: smart glass technology, multi-modal AI, computational geometry, and parallel computing. 
-            Sharing insights through <a href="https://www.youtube.com/@junweizhang" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">YouTube</a> 
-            and <a href="https://www.bilibili.com/video/BV1QfoGYgERZ/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">Bilibili</a>.
-          </p>
-          <div className="flex gap-4">
-            <a 
-              href="#publications" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-            >
-              View Publications
-            </a>
-            <a 
-              href="#contact" 
-              className="border border-stone-300 dark:border-slate-600 hover:bg-stone-50 dark:hover:bg-slate-800 px-6 py-3 rounded-lg font-medium transition-colors"
-            >
-              Get in Touch
-            </a>
-          </div>
-        </div>
-        <div className="flex justify-center">
-          <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-slate-200 dark:border-slate-700 shadow-lg bg-slate-100 dark:bg-slate-700">
+    <section id="about" className="py-16 md:py-22">
+      <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        {/* Photo */}
+        <div className="flex-shrink-0">
+          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden shadow-apple-md bg-apple-bg-secondary">
             {!imageError ? (
               <img
                 src="/junwei.jpeg"
-                alt="Dr. Junwei Zhang - IEEE Senior Member, Smart Glass GenAI Systems Engineer at Meta"
+                alt="Dr. Junwei Zhang"
                 className="w-full h-full object-cover"
                 onError={() => setImageError(true)}
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-slate-500 dark:text-slate-400 text-center p-4">
-                <div>
-                  <div className="text-4xl mb-2">👨‍💼</div>
-                  <div className="text-sm">Dr. Junwei Zhang</div>
-                  <div className="text-xs">IEEE Senior Member</div>
-                </div>
+              <div className="w-full h-full flex items-center justify-center text-apple-text-tertiary">
+                <span className="text-title-2">JZ</span>
               </div>
             )}
+          </div>
+        </div>
+
+        {/* Info */}
+        <div className="flex-1 text-center md:text-left">
+          <h1 className="text-display md:text-[2.5rem] md:leading-tight font-bold text-apple-text-primary tracking-tight mb-3">
+            Dr. Junwei Zhang
+          </h1>
+
+          <p className="text-body-lg text-apple-text-secondary mb-5 max-w-2xl">
+            Smart Glass GenAI Engineer at{' '}
+            <span className="font-semibold text-apple-text-primary">Meta</span>
+            {' · '}IEEE T-CSVT Associate Editor{' · '}IEEE Senior Member{' · '}TGO Tech Leader
+          </p>
+
+          <p className="text-body text-apple-text-tertiary mb-6 max-w-2xl leading-relaxed">
+            Ph.D. from{' '}
+            <a href="https://www.stonybrook.edu/" target="_blank" rel="noopener noreferrer" className="text-apple-accent hover:underline">
+              Stony Brook University
+            </a>
+            . Previously at DoorDash, Microsoft Azure, and Uber. Research in smart glass technology, multi-modal AI, computational geometry, and parallel computing.
+          </p>
+
+          {/* Compact metrics row */}
+          <div className="flex flex-wrap justify-center md:justify-start gap-6 mb-8 text-center">
+            <div>
+              <div className="text-title-2 font-bold text-apple-text-primary">{metrics.publications}+</div>
+              <div className="text-caption text-apple-text-tertiary">Publications</div>
+            </div>
+            <div>
+              <div className="text-title-2 font-bold text-apple-text-primary">{metrics.citations}</div>
+              <div className="text-caption text-apple-text-tertiary">Citations</div>
+            </div>
+            <div>
+              <div className="text-title-2 font-bold text-apple-text-primary">{metrics.hIndex}</div>
+              <div className="text-caption text-apple-text-tertiary">h-index</div>
+            </div>
+          </div>
+
+          {/* CTAs */}
+          <div className="flex flex-wrap justify-center md:justify-start gap-3">
+            <a
+              href="#publications"
+              className="inline-flex items-center px-5 py-2.5 rounded-apple-lg text-body font-medium bg-apple-text-primary text-white hover:opacity-90 transition-opacity"
+            >
+              View Publications
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center px-5 py-2.5 rounded-apple-lg text-body font-medium border text-apple-text-primary hover:bg-apple-bg-secondary transition-colors"
+              style={{ borderColor: 'var(--color-border)' }}
+            >
+              Get in Touch
+            </a>
+            <a
+              href="https://scholar.google.com/citations?user=FkAGB3MAAAAJ&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-apple-lg text-body font-medium text-apple-accent hover:bg-blue-50 transition-colors"
+            >
+              <i className="ai ai-google-scholar"></i>
+              Google Scholar
+            </a>
           </div>
         </div>
       </div>
