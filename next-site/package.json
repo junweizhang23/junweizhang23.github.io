@@ -5,29 +5,33 @@
   "description": "Personal academic website for Junwei Zhang showcasing research and publications",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "npm run generate-rss && next build",
+    "build": "npm run generate-sitemap && npm run generate-rss && next build",
     "start": "next start",
     "lint": "next lint",
     "export": "next build && next export",
     "update-scholar": "node scripts/update-scholar-metrics.js",
-    "generate-rss": "node scripts/generate-rss.js",
-    "update-and-build": "npm run update-scholar && npm run generate-rss && npm run build"
+    "generate-sitemap": "node scripts/generate-sitemap.mjs",
+    "generate-rss": "node scripts/generate-rss.mjs",
+    "update-and-build": "npm run update-scholar && npm run generate-sitemap && npm run generate-rss && npm run build"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
+    "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.5"
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^9",
     "eslint-config-next": "15.1.5",
-    "@eslint/eslintrc": "^3",
-    "puppeteer": "^24.15.0"
+    "postcss": "^8",
+    "puppeteer": "^24.15.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }

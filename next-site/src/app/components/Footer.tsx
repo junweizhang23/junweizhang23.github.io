@@ -1,10 +1,12 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="border-t mt-8" style={{ borderColor: 'var(--color-separator)' }}>
       <div className="max-w-content mx-auto px-6 py-10">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <h4 className="text-caption font-semibold text-apple-text-primary mb-3">
               Dr. Junwei Zhang
@@ -25,6 +27,25 @@ export default function Footer() {
               Computational Geometry<br />
               Parallel Computing & AI
             </p>
+          </div>
+          <div>
+            <h4 className="text-caption font-semibold text-apple-text-primary mb-3">
+              Pages
+            </h4>
+            <div className="flex flex-col gap-1.5">
+              <Link href="/blog" className="text-caption text-apple-accent hover:underline">
+                Blog
+              </Link>
+              <Link href="/speaking" className="text-caption text-apple-accent hover:underline">
+                Speaking
+              </Link>
+              <Link href="/media-kit" className="text-caption text-apple-accent hover:underline">
+                Media Kit
+              </Link>
+              <a href="/feed.xml" className="text-caption text-apple-accent hover:underline">
+                RSS Feed
+              </a>
+            </div>
           </div>
           <div>
             <h4 className="text-caption font-semibold text-apple-text-primary mb-3">

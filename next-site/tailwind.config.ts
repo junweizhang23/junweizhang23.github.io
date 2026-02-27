@@ -21,6 +21,9 @@ export default {
           'text-tertiary': '#86868B',
           accent: '#007AFF',
           'accent-hover': '#0066D6',
+          border: 'rgba(0, 0, 0, 0.08)',
+          'text-placeholder': '#AEAEB2',
+          blue: '#007AFF',
         },
       },
       fontFamily: {
@@ -39,6 +42,7 @@ export default {
       },
       borderRadius: {
         'apple-sm': '0.375rem',  // 6px
+        'apple': '0.625rem',     // 10px
         'apple-md': '0.625rem',  // 10px
         'apple-lg': '0.875rem',  // 14px
         'apple-xl': '1.25rem',   // 20px

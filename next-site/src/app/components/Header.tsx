@@ -11,6 +11,8 @@ export default function Header() {
     { href: '#leadership', label: t('nav.leadership') },
     { href: '#publications', label: t('nav.publications') },
     { href: '#contact', label: t('nav.contact') },
+    { href: '/blog', label: language === 'zh' ? '博客' : 'Blog' },
+    { href: '/speaking', label: language === 'zh' ? '演讲' : 'Speaking' },
   ];
 
   return (
