@@ -77,15 +77,15 @@ export default function HeroSection() {
           {/* Compact metrics row */}
           <div className="flex flex-wrap justify-center md:justify-start gap-6 mb-8 text-center">
             <div>
-              <div className="text-title-2 font-bold text-apple-text-primary">{metrics.publications}+</div>
+              <div className="text-title-2 font-bold text-amber-600">{metrics.publications}+</div>
               <div className="text-caption text-apple-text-tertiary">Publications</div>
             </div>
             <div>
-              <div className="text-title-2 font-bold text-apple-text-primary">{metrics.citations}</div>
+              <div className="text-title-2 font-bold text-amber-600">{metrics.citations}</div>
               <div className="text-caption text-apple-text-tertiary">Citations</div>
             </div>
             <div>
-              <div className="text-title-2 font-bold text-apple-text-primary">{metrics.hIndex}</div>
+              <div className="text-title-2 font-bold text-amber-600">{metrics.hIndex}</div>
               <div className="text-caption text-apple-text-tertiary">h-index</div>
             </div>
           </div>
@@ -94,14 +94,13 @@ export default function HeroSection() {
           <div className="flex flex-wrap justify-center md:justify-start gap-3">
             <a
               href="#publications"
-              className="inline-flex items-center px-5 py-2.5 rounded-apple-lg text-body font-medium bg-apple-text-primary text-white hover:opacity-90 transition-opacity"
+              className="inline-flex items-center px-5 py-2.5 rounded-apple-lg text-body font-medium bg-apple-accent text-white hover:opacity-90 transition-opacity"
             >
               View Publications
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center px-5 py-2.5 rounded-apple-lg text-body font-medium border text-apple-text-primary hover:bg-apple-bg-secondary transition-colors"
-              style={{ borderColor: 'var(--color-border)' }}
+              className="inline-flex items-center px-5 py-2.5 rounded-apple-lg text-body font-medium border border-apple-accent text-apple-accent hover:bg-blue-50 transition-colors"
             >
               Get in Touch
             </a>

@@ -25,6 +25,14 @@ export default {
           'text-placeholder': '#AEAEB2',
           blue: '#007AFF',
         },
+        amber: {
+          50: '#FFFBEB',
+          100: '#FEF3C7',
+          200: '#FDE68A',
+          500: '#F59E0B',
+          600: '#D97706',
+          700: '#B45309',
+        },
       },
       fontFamily: {
         system: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Arial', 'sans-serif'],

@@ -17,34 +17,68 @@ export default function Home() {
       <div className="min-h-screen bg-white">
         <Header />
 
-        <main className="max-w-content mx-auto px-6">
-          <div className="section-animate">
-            <HeroSection />
-          </div>
-          <hr className="section-divider" />
-          <div className="section-animate">
-            <ResearchSection />
-          </div>
-          <hr className="section-divider" />
-          <div className="section-animate">
-            <LeadershipSection />
-          </div>
-          <hr className="section-divider" />
-          <div className="section-animate">
-            <ContentSection />
-          </div>
-          <hr className="section-divider" />
-          <div className="section-animate">
-            <PublicationsSection />
-          </div>
-          <hr className="section-divider" />
-          <div className="section-animate">
-            <ContactSection />
-          </div>
-          <div className="section-animate">
-            <CommentsSection />
-          </div>
-        </main>
+        {/* Hero — White background */}
+        <div className="bg-white">
+          <main className="max-w-content mx-auto px-6">
+            <div className="section-animate">
+              <HeroSection />
+            </div>
+          </main>
+        </div>
+
+        {/* Research — Light gray background */}
+        <div className="bg-[#F5F5F7]">
+          <main className="max-w-content mx-auto px-6">
+            <div className="section-animate">
+              <ResearchSection />
+            </div>
+          </main>
+        </div>
+
+        {/* Leadership — White background */}
+        <div className="bg-white">
+          <main className="max-w-content mx-auto px-6">
+            <div className="section-animate">
+              <LeadershipSection />
+            </div>
+          </main>
+        </div>
+
+        {/* Knowledge Sharing — Light gray background */}
+        <div className="bg-[#F5F5F7]">
+          <main className="max-w-content mx-auto px-6">
+            <div className="section-animate">
+              <ContentSection />
+            </div>
+          </main>
+        </div>
+
+        {/* Publications — White background */}
+        <div className="bg-white">
+          <main className="max-w-content mx-auto px-6">
+            <div className="section-animate">
+              <PublicationsSection />
+            </div>
+          </main>
+        </div>
+
+        {/* Contact — Light gray background */}
+        <div className="bg-[#F5F5F7]">
+          <main className="max-w-content mx-auto px-6">
+            <div className="section-animate">
+              <ContactSection />
+            </div>
+          </main>
+        </div>
+
+        {/* Comments — White background */}
+        <div className="bg-white">
+          <main className="max-w-content mx-auto px-6">
+            <div className="section-animate">
+              <CommentsSection />
+            </div>
+          </main>
+        </div>
 
         <Footer />
       </div>

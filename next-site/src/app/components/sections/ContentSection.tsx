@@ -27,7 +27,7 @@ export default function ContentSection() {
         {channels.map((channel) => (
           <div
             key={channel.title}
-            className="card-hover p-6 rounded-apple-lg border bg-apple-bg-tertiary"
+            className="card-hover p-6 rounded-apple-lg border bg-white"
             style={{ borderColor: 'var(--color-border)' }}
           >
             <h3 className="text-title-3 text-apple-text-primary mb-2">

@@ -18,6 +18,12 @@
   --color-accent: #007AFF;
   --color-accent-hover: #0066D6;
 
+  /* Claude-inspired warm amber highlights */
+  --color-highlight: #D97706;
+  --color-highlight-hover: #B45309;
+  --color-highlight-bg: #FFFBEB;
+  --color-highlight-bg-hover: #FEF3C7;
+
   --color-border: rgba(0, 0, 0, 0.08);
   --color-separator: rgba(60, 60, 67, 0.12);
 

@@ -55,7 +55,7 @@ export default function LeadershipSection() {
               {role.details.map((detail) => (
                 <div key={detail.label} className="flex justify-between items-baseline">
                   <span className="text-caption text-apple-text-tertiary">{detail.label}</span>
-                  <span className="text-caption font-semibold text-apple-text-primary">{detail.value}</span>
+                  <span className="text-caption font-semibold text-amber-600">{detail.value}</span>
                 </div>
               ))}
             </div>

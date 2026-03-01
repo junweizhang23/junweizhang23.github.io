@@ -50,7 +50,7 @@ export default function PublicationsSection() {
               <span className="text-apple-text-placeholder">·</span>
               <span>{pub.year}</span>
               <span className="text-apple-text-placeholder">·</span>
-              <span>Cited by {pub.citations}</span>
+              <span className="text-amber-600 font-medium">Cited by {pub.citations}</span>
             </div>
             <p className="text-caption text-apple-text-tertiary mb-3">
               {pub.authors}

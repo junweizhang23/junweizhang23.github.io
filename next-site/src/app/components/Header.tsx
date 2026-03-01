@@ -40,7 +40,7 @@ export default function Header() {
               onClick={() => setLanguage('en')}
               className={`px-2.5 py-1 rounded-apple-sm text-caption font-medium transition-all duration-150 ${
                 language === 'en'
-                  ? 'bg-apple-text-primary text-white'
+                  ? 'bg-apple-accent text-white'
                   : 'text-apple-text-tertiary hover:text-apple-text-primary hover:bg-apple-bg-grouped'
               }`}
             >
@@ -50,7 +50,7 @@ export default function Header() {
               onClick={() => setLanguage('zh')}
               className={`px-2.5 py-1 rounded-apple-sm text-caption font-medium transition-all duration-150 ${
                 language === 'zh'
-                  ? 'bg-apple-text-primary text-white'
+                  ? 'bg-apple-accent text-white'
                   : 'text-apple-text-tertiary hover:text-apple-text-primary hover:bg-apple-bg-grouped'
               }`}
             >

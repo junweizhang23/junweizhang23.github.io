@@ -36,8 +36,8 @@ export default function ResearchSection() {
         {researchAreas.map((area) => (
           <div
             key={area.title}
-            className={`card-hover p-6 rounded-apple-lg border bg-apple-bg-tertiary ${
-              area.highlight ? 'border-apple-accent/20' : ''
+            className={`card-hover p-6 rounded-apple-lg border bg-white ${
+              area.highlight ? 'border-amber-500/30' : ''
             }`}
             style={{ borderColor: area.highlight ? undefined : 'var(--color-border)' }}
           >
@@ -46,7 +46,7 @@ export default function ResearchSection() {
                 {area.title}
               </h3>
               {area.highlight && (
-                <span className="flex-shrink-0 ml-3 text-footnote font-medium text-apple-accent bg-blue-50 px-2 py-0.5 rounded-apple-sm">
+                <span className="flex-shrink-0 ml-3 text-footnote font-medium text-amber-600 bg-amber-50 px-2 py-0.5 rounded-apple-sm">
                   Current
                 </span>
               )}

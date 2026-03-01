@@ -71,7 +71,7 @@ export default function ContactSection() {
           ))}
         </div>
 
-        <div className="rounded-apple-lg bg-apple-bg-secondary p-5">
+        <div className="rounded-apple-lg bg-white p-5 border-l-4 border-amber-500">
           <p className="text-caption text-apple-text-secondary text-center">
             <span className="font-medium text-apple-text-primary">Open to: </span>
             {openTo.join(' · ')}
